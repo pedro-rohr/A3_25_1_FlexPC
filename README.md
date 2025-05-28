@@ -2,7 +2,7 @@
 
 App para aluguel de produtos eletrônicos
 
-## Install the dependencies
+## Install the dependencies (usei o npm install no cmd)
 ```bash
 yarn
 # or

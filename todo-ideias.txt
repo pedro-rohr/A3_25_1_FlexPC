@@ -1,0 +1,6 @@
+Admin poder alterar valores do produto
+(Status: manutenção, disponível; Preço: promoção, atualização)
+
+Manter log de mudanças
+
+Não deixar lógica de negócio dentro dos componentes, usar lógicas de services
