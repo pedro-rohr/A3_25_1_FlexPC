@@ -7,23 +7,24 @@
           <div class="text-h6 text-white layout">$ {{ preco - promo }}</div>
         </div>
         <q-card-section class="bg-white-1 text-black">
-          {{ lorem }}
+          {{ descricao }}
         </q-card-section>
         <q-card-actions align="right">
           <q-btn
-            label="Adicionar ao Carrinho"
+            label="Ver Produto"
             class="bg-light-blue-8 text-white"
-            @click="adicionarAoCarrinho"
+            @click="verProduto"
           />
         </q-card-actions>
       </q-card>
     </div>
   </template>
-  
+
   <script>
   export default {
     name: 'CardProduto',
     props: {
+      id: { type: Number, required: true },
       titulo: { type: String, required: true },
       urlFoto: { type: String, required: false },
       preco: { type: Number, required: true },
@@ -36,15 +37,25 @@
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
       }
     },
-    // methods: {
-    //   adicionarAoCarrinho() {
-    // 
-    //     })
-    //   },
-    // },
-  }
+    methods: {
+      verProduto() {
+        this.$router.push('/produto/' + this.id);
+        // this.$router.push({ name: '/produto/', params: { id: this.id } })
+        },
+      },
+      created() {
+      fetch('http://localhost:3000/produtos/' + this.id)
+        .then((res) => {
+          res.json().then((dados) => {
+            this.produtos = dados
+          })
+        })
+        .catch()
+    },
+    }
+
   </script>
-  
+
   <style>
   .my-card{
     width: 100%;

@@ -11,7 +11,7 @@
             <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
           </q-avatar>
           <RouterLink to="/" style="color: orange;">Title</RouterLink>
-          
+
         </q-toolbar-title>
         <RouterLink to="/login" style="color: orange;">Login</RouterLink>
                 <q-btn dense flat round icon="menu" @click="toggleRightDrawer" />
@@ -44,15 +44,15 @@ import EssentialLink from 'components/EssentialLink.vue'
 const linksList = [
   {
     title: 'Home',
-    caption: 'quasar.dev',
+    caption: 'Página principal',
     icon: 'school',
-    link: 'https://quasar.dev',
+    link: '/',
   },
   {
     title: 'About',
-    caption: 'github.com/quasarframework',
+    caption: 'Sobre nossa empresa',
     icon: 'code',
-    link: 'https://github.com/quasarframework',
+    link: '/sobre',
   },
   {
     title: 'Produtos',
