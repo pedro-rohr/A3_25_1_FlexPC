@@ -1,0 +1,67 @@
+{
+    "produtos": [
+      {
+        "titulo": "PC",
+        "urlFoto": "https://gru.ifsp.edu.br/images/phocagallery/galeria2/image03_grd.png",
+        "preco": 100.0,
+        "promo": 10.01,
+        "descricao": "Computador de mesa com processador Intel i5, 8GB RAM, 256GB SSD."
+      },
+      {
+        "titulo": "Laptop",
+        "urlFoto": "https://thumbs.dreamstime.com/b/imagem-larga-do-campo-de-grama-verde-27742821.jpg",
+        "preco": 200.0,
+        "promo": 50.01,
+        "descricao": "Notebook leve e portátil com processador AMD Ryzen 5, 16GB RAM, 512GB SSD."
+      },
+      {
+        "titulo": "Impressora",
+        "urlFoto": "https://st.depositphotos.com/1179847/4067/i/450/depositphotos_40676241-stock-photo-barbados.jpg",
+        "preco": 500.0,
+        "promo": 100.01,
+        "descricao": "Impressora HP LaserJet Pro M404dn, impressão rápida e de alta qualidade."
+      },
+      {
+        "titulo": "PC",
+        "urlFoto": "https://gru.ifsp.edu.br/images/phocagallery/galeria2/image03_grd.png",
+        "preco": 100.0,
+        "promo": 10.01,
+        "descricao": "Computador de mesa com processador Intel i5, 8GB RAM, 256GB SSD."
+      },
+      {
+        "titulo": "Laptop",
+        "urlFoto": "https://thumbs.dreamstime.com/b/imagem-larga-do-campo-de-grama-verde-27742821.jpg",
+        "preco": 200.0,
+        "promo": 50.01,
+        "descricao": "Notebook leve e portátil com processador AMD Ryzen 5, 16GB RAM, 512GB SSD."
+      },
+      {
+        "titulo": "Impressora",
+        "urlFoto": "https://st.depositphotos.com/1179847/4067/i/450/depositphotos_40676241-stock-photo-barbados.jpg",
+        "preco": 500.0,
+        "promo": 100.01,
+        "descricao": "Impressora HP LaserJet Pro M404dn, impressão rápida e de alta qualidade."
+      },
+      {
+        "titulo": "PC",
+        "urlFoto": "https://gru.ifsp.edu.br/images/phocagallery/galeria2/image03_grd.png",
+        "preco": 100.0,
+        "promo": 10.01,
+        "descricao": "Computador de mesa com processador Intel i5, 8GB RAM, 256GB SSD."
+      },
+      {
+        "titulo": "Laptop",
+        "urlFoto": "https://thumbs.dreamstime.com/b/imagem-larga-do-campo-de-grama-verde-27742821.jpg",
+        "preco": 200.0,
+        "promo": 50.01,
+        "descricao": "Notebook leve e portátil com processador AMD Ryzen 5, 16GB RAM, 512GB SSD."
+      },
+      {
+        "titulo": "Impressora",
+        "urlFoto": "https://st.depositphotos.com/1179847/4067/i/450/depositphotos_40676241-stock-photo-barbados.jpg",
+        "preco": 500.0,
+        "promo": 100.01,
+        "descricao": "Impressora HP LaserJet Pro M404dn, impressão rápida e de alta qualidade."
+      }
+    ]
+  }

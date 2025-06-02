@@ -11,6 +11,7 @@
             :titulo="prod.titulo"
             :urlFoto="prod.urlFoto"
             :preco="prod.preco"
+            :descricao="prod.descricao"
           />
         </div>
       </div>
@@ -23,48 +24,17 @@
     components: { CardProduto },
     data() {
       return {
-        // produtos: new Array(),
-        produtos: [{
-            titulo: 'Pinguins',
-            urlFoto: 'https://gru.ifsp.edu.br/images/phocagallery/galeria2/image03_grd.png',
-            preco: 1000,
-            },
-            {
-            titulo: 'Tigre',
-            urlFoto: 'https://static.vecteezy.com/ti/fotos-gratis/t2/36324708-ai-gerado-cenario-do-uma-tigre-caminhando-dentro-a-floresta-foto.jpg',
-            preco: 2000,
-        },
-        // {
-        //     titulo: 'Pinguins',
-        //     urlFoto: 'https://gru.ifsp.edu.br/images/phocagallery/galeria2/image03_grd.png',
-        //     preco: 1000,
-        //     },
-        //     {
-        //     titulo: 'Tigre',
-        //     urlFoto: 'https://static.vecteezy.com/ti/fotos-gratis/t2/36324708-ai-gerado-cenario-do-uma-tigre-caminhando-dentro-a-floresta-foto.jpg',
-        //     preco: 2000,
-        // },
-        // {
-        //     titulo: 'Pinguins',
-        //     urlFoto: 'https://gru.ifsp.edu.br/images/phocagallery/galeria2/image03_grd.png',
-        //     preco: 1000,
-        //     },
-        //     {
-        //     titulo: 'Tigre',
-        //     urlFoto: 'https://static.vecteezy.com/ti/fotos-gratis/t2/36324708-ai-gerado-cenario-do-uma-tigre-caminhando-dentro-a-floresta-foto.jpg',
-        //     preco: 2000,
-        // },
-    ]
+        produtos: new Array(),
       }
     },
     created() {
-    //   fetch('http://localhost:3000/produtos')
-    //     .then((res) => {
-    //       res.json().then((dados) => {
-    //         this.produtos = dados
-    //       })
-    //     })
-    //     .catch()
+      fetch('http://localhost:3000/produtos')
+        .then((res) => {
+          res.json().then((dados) => {
+            this.produtos = dados
+          })
+        })
+        .catch()
     },
   }
   </script>
