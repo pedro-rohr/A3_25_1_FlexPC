@@ -8,6 +8,7 @@
           <CardProduto
             v-for="prod in produtos"
             v-bind:key="prod"
+            :id="prod.id"
             :titulo="prod.titulo"
             :urlFoto="prod.urlFoto"
             :preco="prod.preco"
