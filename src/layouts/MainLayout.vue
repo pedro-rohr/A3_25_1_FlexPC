@@ -12,8 +12,8 @@
         />
         
         <q-toolbar-title>
+          <img src="../assets/FlexPC.png" alt="Logo" style="width: 120px;" >
 
-          <RouterLink to="/" style="color: white; margin-left: 10px; text-decoration: none;">FlexPC</RouterLink>
         </q-toolbar-title>
 
         <div v-if="authStore.isAuthenticated" class="user-info">
@@ -56,7 +56,7 @@
       bordered
     >
       <q-list>
-        <q-item-label header>Menu</q-item-label>
+        <q-item-label header>Links</q-item-label>
         <q-item clickable v-ripple @click="$router.push('/')">
           <q-item-section avatar>
             <q-icon name="home" />
@@ -111,22 +111,16 @@ const linksList = [
     link: '/',
   },
   {
-    title: 'Produtos',
-    caption: 'Ver todos os produtos',
-    icon: 'shopping_bag',
-    link: '/produto',
-  },
-  {
     title: 'Sobre',
     caption: 'Sobre nossa empresa',
     icon: 'info',
-    link: '/sobre',
+    link: '/#/sobre',
   },
   {
     title: 'Promoções',
-    caption: 'Ofertas especiais',
-    icon: 'local_offer',
-    link: '/promocoes',
+    caption: 'Veja os itens em promoção',
+    icon: 'paid',
+    link: '/#/promocoes',
   },
 ]
 

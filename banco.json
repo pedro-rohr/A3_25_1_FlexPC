@@ -5,7 +5,7 @@
         "titulo": "Computador Completo Monitor Teclado e Mouse",
         "urlFoto": "https://thumbs.dreamstime.com/b/computador-de-secret%C3%A1ria-com-foto-que-edita-o-software-27075400.jpg",
         "preco": 300.0,
-        "promo": 101.00,
+        "promo": 0.00,
         "descricao": "Computador Completo com processador Intel Core i5, 8GB RAM, 256GB SSD, monitor 19 polegadas, teclado e mouse."
       },
       {
@@ -29,7 +29,7 @@
         "titulo": "Computador e Monitor",
         "urlFoto": "https://s.zst.com.br/cms-assets/2021/07/tela-preta-no-pc-ou-notebook-durante-instala-o-ou-atualiza-o.jpg",
         "preco": 250.0,
-        "promo": 50.0,
+        "promo": 0.0,
         "descricao": "Computador com processador Intel i5, 8GB RAM, 256GB SSD e monitor 24 polegadas."
       },
       {
@@ -45,7 +45,7 @@
         "titulo": "Impressora Impressora HP LaserJet",
         "urlFoto": "https://xtech.com.br/config/imagens_conteudo/produtos/imagensGRD/CF286A.jpg",
         "preco": 270.0,
-        "promo": 50.0,
+        "promo": 0.0,
         "descricao": "Impressora HP LaserJet Pro 400, impressão rápida e de alta qualidade."
       },
       {
@@ -69,7 +69,7 @@
         "titulo": "Kit de acessórios",
         "urlFoto": "https://lojaibyte.vteximg.com.br/arquivos/ids/430427-1200-1200/kit-gamer-gt-com-headset-teclado-mouse-mousepad-001-min.jpg?v=638557873974000000",
         "preco": 59.99,
-        "promo": 10.0,
+        "promo": 0.0,
         "descricao": "Kit Gamer Goldentec com Headset + Teclado + Mouse 1200DPI + Mousepad."
       }
     ]
