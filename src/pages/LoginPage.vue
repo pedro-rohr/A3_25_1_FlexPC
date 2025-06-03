@@ -3,7 +3,7 @@
     <q-card class="login-card q-pa-lg">
       <q-card-section class="text-center">
         <q-avatar size="200px" style=" width: 100%; ">
-          <img src="../assets/flexpc.png" >
+          <img src="../assets/flexPCALT.png" >
         </q-avatar>
       </q-card-section>
       
