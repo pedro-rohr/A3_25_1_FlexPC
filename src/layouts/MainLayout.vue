@@ -103,30 +103,58 @@
 <script>
 import { useAuthStore } from 'src/stores/auth'
 
+const linksList = [
+  {
+    title: 'Home',
+    caption: 'Página principal',
+    icon: 'home',
+    link: '/',
+  },
+  {
+    title: 'Produtos',
+    caption: 'Ver todos os produtos',
+    icon: 'shopping_bag',
+    link: '/produto',
+  },
+  {
+    title: 'Sobre',
+    caption: 'Sobre nossa empresa',
+    icon: 'info',
+    link: '/sobre',
+  },
+  {
+    title: 'Promoções',
+    caption: 'Ofertas especiais',
+    icon: 'local_offer',
+    link: '/promocoes',
+  },
+]
+
 export default {
   name: 'MainLayout',
-  
+ 
   data() {
     return {
       leftDrawerOpen: false,
       rightDrawerOpen: false,
-      authStore: null
+      authStore: null,
+      linksList
     }
   },
-
+  
   created() {
     this.authStore = useAuthStore()
   },
-
+  
   methods: {
     toggleLeftDrawer() {
       this.leftDrawerOpen = !this.leftDrawerOpen
     },
-    
+   
     toggleRightDrawer() {
       this.rightDrawerOpen = !this.rightDrawerOpen
     },
-    
+   
     handleLogout() {
       this.authStore.logout()
       this.$router.push('/login')

@@ -36,6 +36,15 @@ const routes = [
       meta: { requiresAuth: true } 
     }],
   },
+
+  {
+    path: '/sobre',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [{ path: '', component: () => import('pages/AboutPage.vue'),
+      meta: { requiresAuth: true }
+     }],
+  },
+
   // Always leave this as last one,
   // but you can also remove it
   {
