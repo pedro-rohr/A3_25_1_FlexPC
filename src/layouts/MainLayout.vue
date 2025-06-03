@@ -1,113 +1,156 @@
-
 <template>
   <q-layout view="hHh LpR fFf">
-
     <q-header elevated class="bg-primary text-white">
       <q-toolbar>
-        <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
-
+        <q-btn 
+          v-if="authStore.isAuthenticated"
+          dense 
+          flat 
+          round 
+          icon="menu" 
+          @click="toggleLeftDrawer" 
+        />
+        
         <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-          </q-avatar>
-          <RouterLink to="/" style="color: orange;">Title</RouterLink>
-          
+
+          <RouterLink to="/" style="color: white; margin-left: 10px; text-decoration: none;">FlexPC</RouterLink>
         </q-toolbar-title>
-        <RouterLink to="/login" style="color: orange;">Login</RouterLink>
-                <q-btn dense flat round icon="menu" @click="toggleRightDrawer" />
+
+        <div v-if="authStore.isAuthenticated" class="user-info">
+          <span class="user-name">{{ authStore.user?.name || authStore.user?.email }}</span>
+          <q-btn 
+            v-if="authStore.isAdmin"
+            dense 
+            flat 
+            size="sm"
+            label="ADMIN"
+            class="admin-badge q-ml-sm"
+          />
+          <q-btn 
+            dense 
+            flat 
+            icon="logout" 
+            @click="handleLogout"
+            class="q-ml-sm"
+          >
+            <q-tooltip>Sair</q-tooltip>
+          </q-btn>
+        </div>
+
+        <q-btn 
+          v-if="authStore.isAuthenticated"
+          dense 
+          flat 
+          round 
+          icon="menu" 
+          @click="toggleRightDrawer" 
+        />
       </q-toolbar>
     </q-header>
 
-    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
+    <q-drawer 
+      v-if="authStore.isAuthenticated"
+      show-if-above 
+      v-model="leftDrawerOpen" 
+      side="left" 
+      bordered
+    >
       <q-list>
-        <q-item-label header> Essential Links </q-item-label>
+        <q-item-label header>Menu</q-item-label>
+        <q-item clickable v-ripple @click="$router.push('/')">
+          <q-item-section avatar>
+            <q-icon name="home" />
+          </q-item-section>
+          <q-item-section>Home</q-item-section>
+        </q-item>
 
-        <EssentialLink v-for="link in linksList" :key="link.title" v-bind="link" />
+        <q-item clickable v-ripple @click="$router.push('/produto')">
+          <q-item-section avatar>
+            <q-icon name="shopping_bag" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Produtos</q-item-label>
+            <q-item-label caption>Ver todos os produtos</q-item-label>
+          </q-item-section>
+        </q-item>
+
       </q-list>
     </q-drawer>
 
-    <q-drawer show-if-above v-model="rightDrawerOpen" side="right" bordered>
-      <!-- Carrinho? -->
+    <q-drawer 
+      v-if="authStore.isAuthenticated"
+      show-if-above 
+      v-model="rightDrawerOpen" 
+      side="right" 
+      bordered
+    >
+      <q-list>
+        <q-item-label header>Carrinho</q-item-label>
+        <q-item>
+          <q-item-section>
+            <q-item-label>Carrinho vazio</q-item-label>
+          </q-item-section>
+        </q-item>
+      </q-list>
     </q-drawer>
 
     <q-page-container>
       <router-view />
     </q-page-container>
-
   </q-layout>
 </template>
 
 <script>
-import { defineComponent } from 'vue'
-import EssentialLink from 'components/EssentialLink.vue'
+import { useAuthStore } from 'src/stores/auth'
 
-const linksList = [
-  {
-    title: 'Home',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev',
-  },
-  {
-    title: 'About',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework',
-  },
-  {
-    title: 'Produtos',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev',
-  },
-  {
-    title: 'Promoções',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev',
-  },
-  // {
-  //   title: 'Twitter',
-  //   caption: '@quasarframework',
-  //   icon: 'rss_feed',
-  //   link: 'https://twitter.quasar.dev',
-  // },
-  // {
-  //   title: 'Facebook',
-  //   caption: '@QuasarFramework',
-  //   icon: 'public',
-  //   link: 'https://facebook.quasar.dev',
-  // },
-  // {
-  //   title: 'Quasar Awesome',
-  //   caption: 'Community Quasar projects',
-  //   icon: 'favorite',
-  //   link: 'https://awesome.quasar.dev',
-  // },
-]
-
-export default defineComponent({
+export default {
   name: 'MainLayout',
-
-  components: {
-    EssentialLink,
-  },
-
+  
   data() {
     return {
-      linksList,
       leftDrawerOpen: false,
       rightDrawerOpen: false,
+      authStore: null
     }
+  },
+
+  created() {
+    this.authStore = useAuthStore()
   },
 
   methods: {
     toggleLeftDrawer() {
       this.leftDrawerOpen = !this.leftDrawerOpen
     },
+    
     toggleRightDrawer() {
       this.rightDrawerOpen = !this.rightDrawerOpen
     },
-  },
-})
+    
+    handleLogout() {
+      this.authStore.logout()
+      this.$router.push('/login')
+    }
+  }
+}
 </script>
+
+<style scoped>
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-name {
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+}
+
+.admin-badge {
+  background-color: rgba(255, 255, 255, 0.2);
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+</style>
