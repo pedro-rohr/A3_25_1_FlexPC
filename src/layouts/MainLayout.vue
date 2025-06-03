@@ -7,9 +7,7 @@
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
         <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-          </q-avatar>
+          <img src="../assets/FlexPC.png" alt="Logo" style="width: 120px;">
           <RouterLink to="/" style="color: orange;">Title</RouterLink>
 
         </q-toolbar-title>
@@ -18,9 +16,9 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
+    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered class="text-light-blue-10">
       <q-list>
-        <q-item-label header> Essential Links </q-item-label>
+        <q-item-label header> Links </q-item-label>
 
         <EssentialLink v-for="link in linksList" :key="link.title" v-bind="link" />
       </q-list>
@@ -45,26 +43,20 @@ const linksList = [
   {
     title: 'Home',
     caption: 'Página principal',
-    icon: 'school',
+    icon: 'home',
     link: '/',
   },
   {
-    title: 'About',
+    title: 'Sobre',
     caption: 'Sobre nossa empresa',
-    icon: 'code',
-    link: '/sobre',
-  },
-  {
-    title: 'Produtos',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev',
+    icon: 'info',
+    link: '/#/sobre',
   },
   {
     title: 'Promoções',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev',
+    caption: 'Veja os itens em promoção',
+    icon: 'paid',
+    link: '/#/promocoes',
   },
   // {
   //   title: 'Twitter',
