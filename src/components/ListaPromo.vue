@@ -1,12 +1,12 @@
 <template>
     <div class="bg-light-blue-2 pads">
       <div class="textoCentro text-light-blue-10">
-        <h2 style="font-weight: bold; font-size: 40px">Produtos</h2>
+        <h2 style="font-weight: bold; font-size: 40px">Produtos em promoção</h2>
       </div>
       <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
           <CardProduto
-            v-for="prod in produtos"
+            v-for="prod in produtosComPromo"
             v-bind:key="prod"
             :id="prod.id"
             :titulo="prod.titulo"
@@ -29,6 +29,11 @@
         produtos: new Array(),
       }
     },
+    computed: {
+  produtosComPromo() {
+    return this.produtos.filter(prod => prod.promo > 0);
+  }
+},
     created() {
       fetch('http://localhost:3000/produtos')
         .then((res) => {
@@ -37,7 +42,7 @@
           })
         })
         .catch()
-    },
+    }
   }
   </script>
 <style>

@@ -3,7 +3,6 @@
     <div>
       <div class="textoCentro">
       <h1 class="textoCentro" style="font-weight: bold; font-size: 50px">Home Page</h1>
-      <RouterLink to="/produto">vai a produto</RouterLink>
     </div>
     <div>
       <ListaProduto/>
@@ -16,7 +15,6 @@
 </template>
 
 <script>
-import { RouterLink } from 'app/node_modules/vue-router/dist/vue-router'
 import { defineComponent } from 'vue'
 import { useCounterStore } from 'src/stores/example-store'
 import CardProduto from '../components/CardProduto.vue'
@@ -40,7 +38,7 @@ export default defineComponent({
     let store = useCounterStore()
     this.dadoLocal = store.dado
   },
-  components: { RouterLink, ListaProduto }, CardProduto
+  components: { ListaProduto }, CardProduto
 })
 </script>
 <style>

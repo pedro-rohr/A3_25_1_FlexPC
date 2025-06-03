@@ -11,9 +11,9 @@
       </q-card-section>
       <q-card-actions align="right">
         <q-btn
-          label="Adicionar ao Carrinho"
+          label="Alugar produto"
           class="bg-light-blue-8 text-white"
-          @click="adicionarAoCarrinho"
+          @click="alugarProduto(produto.id)"
         />
       </q-card-actions>
     </q-card>
@@ -40,7 +40,7 @@ export default {
         .catch()
     },
   // methods: {
-  //   adicionarAoCarrinho() {
+  //   alugarProduto() {
   //
   //     })
   //   },
