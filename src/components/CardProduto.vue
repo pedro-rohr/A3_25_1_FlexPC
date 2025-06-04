@@ -1,7 +1,14 @@
 <template>
     <div class="q-pa-md row items-start q-gutter-md">
       <q-card class="my-card">
-        <q-img :src="urlFoto" style="height: 225px"></q-img>
+        <q-img :src="urlFoto" style="height: 225px; position: relative;">
+          <div
+          v-if="promo > 0"
+          class="absolute-top-left text-white q-pa-xs bg-light-blue-8" style="border-radius: 4px; font-size: 12px;">
+            PROMOÇÃO
+          </div>
+        </q-img>
+
         <div class="bg-light-blue-8 flexDisplay">
           <div class="text-h6 text-white layout">{{ titulo }}</div>
           <div class="text-h6 text-white layout">$ {{ preco - promo }}</div>
