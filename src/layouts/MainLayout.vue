@@ -1,43 +1,93 @@
-
 <template>
   <q-layout view="hHh LpR fFf">
-
     <q-header elevated class="bg-primary text-white">
       <q-toolbar>
-        <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
-
+        <q-btn
+          v-if="authStore.isAuthenticated"
+          dense
+          flat
+          round
+          icon="menu"
+          @click="toggleLeftDrawer"
+        />
+       
         <q-toolbar-title>
-          <img src="../assets/FlexPC.png" alt="Logo" style="width: 120px;">
-          <RouterLink to="/" style="color: orange;">Title</RouterLink>
-
+          <img src="../assets/FlexPC.png" alt="Logo" style="width: 120px;" >
         </q-toolbar-title>
-        <RouterLink to="/login" style="color: orange;">Login</RouterLink>
-                <q-btn dense flat round icon="menu" @click="toggleRightDrawer" />
+        <div v-if="authStore.isAuthenticated" class="user-info">
+          <span class="user-name">{{ authStore.user?.name || authStore.user?.email }}</span>
+          <q-btn
+            v-if="authStore.isAdmin"
+            dense
+            flat
+            size="sm"
+            label="ADMIN"
+            class="admin-badge q-ml-sm"
+          />
+          <q-btn
+            dense
+            flat
+            icon="logout"
+            @click="handleLogout"
+            class="q-ml-sm"
+          >
+            <q-tooltip>Sair</q-tooltip>
+          </q-btn>
+        </div>
+        <q-btn
+          v-if="authStore.isAuthenticated"
+          dense
+          flat
+          round
+          icon="menu"
+          @click="toggleRightDrawer"
+        />
       </q-toolbar>
     </q-header>
-
-    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered class="text-light-blue-10">
+    <q-drawer
+      v-if="authStore.isAuthenticated"
+      show-if-above
+      v-model="leftDrawerOpen"
+      side="left"
+      bordered
+    >
       <q-list>
-        <q-item-label header> Links </q-item-label>
-
-        <EssentialLink v-for="link in linksList" :key="link.title" v-bind="link" />
+        <q-item-label header>Links</q-item-label>
+        <!-- Usando o array linksList -->
+        <q-item 
+          clickable 
+          v-ripple 
+          v-for="link in linksList" 
+          :key="link.title"
+          @click="$router.push(link.link)"
+        >
+          <q-item-section avatar>
+            <q-icon :name="link.icon" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>{{ link.title }}</q-item-label>
+            <q-item-label caption>{{ link.caption }}</q-item-label>
+          </q-item-section>
+        </q-item>
       </q-list>
     </q-drawer>
-
-    <q-drawer show-if-above v-model="rightDrawerOpen" side="right" bordered>
-      <!-- Carrinho? -->
+    <q-drawer
+      v-if="authStore.isAuthenticated"
+      show-if-above
+      v-model="rightDrawerOpen"
+      side="right"
+      bordered
+    >
+    <!-- carrinho? -->
     </q-drawer>
-
     <q-page-container>
       <router-view />
     </q-page-container>
-
   </q-layout>
 </template>
 
 <script>
-import { defineComponent } from 'vue'
-import EssentialLink from 'components/EssentialLink.vue'
+import { useAuthStore } from 'src/stores/auth'
 
 const linksList = [
   {
@@ -50,56 +100,63 @@ const linksList = [
     title: 'Sobre',
     caption: 'Sobre nossa empresa',
     icon: 'info',
-    link: '/#/sobre',
+    link: '/sobre',
   },
   {
     title: 'Promoções',
     caption: 'Veja os itens em promoção',
     icon: 'paid',
-    link: '/#/promocoes',
+    link: '/promocoes',
   },
-  // {
-  //   title: 'Twitter',
-  //   caption: '@quasarframework',
-  //   icon: 'rss_feed',
-  //   link: 'https://twitter.quasar.dev',
-  // },
-  // {
-  //   title: 'Facebook',
-  //   caption: '@QuasarFramework',
-  //   icon: 'public',
-  //   link: 'https://facebook.quasar.dev',
-  // },
-  // {
-  //   title: 'Quasar Awesome',
-  //   caption: 'Community Quasar projects',
-  //   icon: 'favorite',
-  //   link: 'https://awesome.quasar.dev',
-  // },
 ]
 
-export default defineComponent({
+export default {
   name: 'MainLayout',
-
-  components: {
-    EssentialLink,
-  },
-
+ 
   data() {
     return {
-      linksList,
       leftDrawerOpen: false,
       rightDrawerOpen: false,
+      authStore: null,
+      linksList
     }
   },
-
+ 
+  created() {
+    this.authStore = useAuthStore()
+  },
+ 
   methods: {
     toggleLeftDrawer() {
       this.leftDrawerOpen = !this.leftDrawerOpen
     },
+   
     toggleRightDrawer() {
       this.rightDrawerOpen = !this.rightDrawerOpen
     },
-  },
-})
+   
+    handleLogout() {
+      this.authStore.logout()
+      this.$router.push('/login')
+    }
+  }
+}
 </script>
+
+<style scoped>
+.user-info {
+  display: flex;
+  align-items: center;
+}
+.user-name {
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+}
+.admin-badge {
+  background-color: rgba(255, 255, 255, 0.2);
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+</style>
