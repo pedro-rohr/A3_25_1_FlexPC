@@ -69,16 +69,6 @@
             <q-item-label caption>{{ link.caption }}</q-item-label>
           </q-item-section>
         </q-item>
-        <!-- Produtos separado se necessário -->
-        <q-item clickable v-ripple @click="$router.push('/produto')">
-          <q-item-section avatar>
-            <q-icon name="shopping_bag" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Produtos</q-item-label>
-            <q-item-label caption>Ver todos os produtos</q-item-label>
-          </q-item-section>
-        </q-item>
       </q-list>
     </q-drawer>
     <q-drawer
@@ -110,13 +100,13 @@ const linksList = [
     title: 'Sobre',
     caption: 'Sobre nossa empresa',
     icon: 'info',
-    link: '/#/sobre',
+    link: '/sobre',
   },
   {
     title: 'Promoções',
     caption: 'Veja os itens em promoção',
     icon: 'paid',
-    link: '/#/promocoes',
+    link: '/promocoes',
   },
 ]
 
