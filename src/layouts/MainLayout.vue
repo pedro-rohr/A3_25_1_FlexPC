@@ -10,9 +10,9 @@
           icon="menu"
           @click="toggleLeftDrawer"
         />
-       
+
         <q-toolbar-title>
-          <img src="../assets/FlexPC.png" alt="Logo" style="width: 120px;" >
+          <img src="../assets/FlexPC.png" alt="Logo" style="width: 120px" />
         </q-toolbar-title>
         <div v-if="authStore.isAuthenticated" class="user-info">
           <span class="user-name">{{ authStore.user?.name || authStore.user?.email }}</span>
@@ -24,13 +24,7 @@
             label="ADMIN"
             class="admin-badge q-ml-sm"
           />
-          <q-btn
-            dense
-            flat
-            icon="logout"
-            @click="handleLogout"
-            class="q-ml-sm"
-          >
+          <q-btn dense flat icon="logout" @click="handleLogout" class="q-ml-sm">
             <q-tooltip>Sair</q-tooltip>
           </q-btn>
         </div>
@@ -54,10 +48,10 @@
       <q-list>
         <q-item-label header>Links</q-item-label>
         <!-- Usando o array linksList -->
-        <q-item 
-          clickable 
-          v-ripple 
-          v-for="link in linksList" 
+        <q-item
+          clickable
+          v-ripple
+          v-for="link in linksList"
           :key="link.title"
           @click="$router.push(link.link)"
         >
@@ -78,7 +72,7 @@
       side="right"
       bordered
     >
-    <!-- carrinho? -->
+      <!-- carrinho? -->
     </q-drawer>
     <q-page-container>
       <router-view />
@@ -108,38 +102,44 @@ const linksList = [
     icon: 'paid',
     link: '/promocoes',
   },
+  {
+    title: 'Aluguel',
+    caption: 'teste',
+    icon: 'paid',
+    link: '/alugar',
+  },
 ]
 
 export default {
   name: 'MainLayout',
- 
+
   data() {
     return {
       leftDrawerOpen: false,
       rightDrawerOpen: false,
       authStore: null,
-      linksList
+      linksList,
     }
   },
- 
+
   created() {
     this.authStore = useAuthStore()
   },
- 
+
   methods: {
     toggleLeftDrawer() {
       this.leftDrawerOpen = !this.leftDrawerOpen
     },
-   
+
     toggleRightDrawer() {
       this.rightDrawerOpen = !this.rightDrawerOpen
     },
-   
+
     handleLogout() {
       this.authStore.logout()
       this.$router.push('/login')
-    }
-  }
+    },
+  },
 }
 </script>
 

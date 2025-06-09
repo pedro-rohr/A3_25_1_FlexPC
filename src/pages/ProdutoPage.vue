@@ -1,7 +1,7 @@
 <template>
   <div class="q-pa-md row items-start q-gutter-md">
     <q-card class="my-card-produto">
-      <q-img :src="produto.urlFoto" class="flexDisplay" ></q-img>
+      <q-img :src="produto.urlFoto" class="flexDisplay"></q-img>
       <div class="bg-light-blue-8 flexDisplay">
         <div class="text-h6 text-white layout">{{ produto.titulo }}</div>
         <div class="text-h6 text-white layout">$ {{ produto.preco - produto.promo }}</div>
@@ -23,35 +23,35 @@
 <script>
 export default {
   name: 'ProdutoPage',
-  props: {
-  },
+  props: {},
   data() {
     return {
       produto: Object,
     }
   },
   created() {
-      fetch('http://localhost:3000/produtos/' + this.$route.params.id)
-        .then((res) => {
-          res.json().then((dados) => {
-            this.produto = dados
-          })
+    fetch('http://localhost:3000/produtos/' + this.$route.params.id)
+      .then((res) => {
+        res.json().then((dados) => {
+          this.produto = dados
         })
-        .catch()
+      })
+      .catch()
+  },
+  methods: {
+    alugarProduto() {
+      this.$router.push('/alugar/' + this.produto.id)
     },
-  // methods: {
-  //   alugarProduto() {
-  //
-  //     })
-  //   },
+  },
   // },
 }
 </script>
 
 <style>
-.my-card-produto{
+.my-card-produto {
   width: 100%;
-  max-width: 1920px}
+  max-width: 1920px;
+}
 .layout {
   padding: 15px;
 }
