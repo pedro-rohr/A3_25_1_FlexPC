@@ -149,12 +149,13 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 400px;
+  width: 300px;
   height: 300px;
 }
 .image-produto {
   width: 100%;
   height: auto;
+  border-radius: 15px;
 }
 .texto-produto {
   max-width: 400px;

@@ -102,12 +102,6 @@ const linksList = [
     icon: 'paid',
     link: '/promocoes',
   },
-  {
-    title: 'Aluguel',
-    caption: 'teste',
-    icon: 'paid',
-    link: '/alugar',
-  },
 ]
 
 export default {
