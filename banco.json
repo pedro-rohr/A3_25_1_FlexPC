@@ -1,76 +1,178 @@
 {
-    "produtos": [
-      {
-        "id": "1", 
+  "produtos": [
+    {
+      "id": "1",
+      "titulo": "Computador Completo Monitor Teclado e Mouse",
+      "urlFoto": "https://thumbs.dreamstime.com/b/computador-de-secret%C3%A1ria-com-foto-que-edita-o-software-27075400.jpg",
+      "preco": 300,
+      "promo": 0,
+      "descricao": "Computador Completo com processador Intel Core i5, 8GB RAM, 256GB SSD, monitor 19 polegadas, teclado e mouse."
+    },
+    {
+      "id": "2",
+      "titulo": "Notebook Dell",
+      "urlFoto": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/inspiron-notebooks/15-3520/media-gallery/notebook-inspiron-15-3520-black-gallery-10.psd?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=606&qlt=100,1&resMode=sharp2&size=606,402&chrss=full",
+      "preco": 350,
+      "promo": 99,
+      "descricao": "Notebook de 15,6 polegadas com processador Intel Core i7 de 12ª geração, 8GB RAM, 512GB SSD, em um design elegante e sustentável, com recursos essenciais para o uso diário."
+    },
+    {
+      "id": "3",
+      "titulo": "Impressora Epson",
+      "urlFoto": "https://www.fujioka.com.br/arquivos/ids/278569-1000-1000/p_57924_alta_1.png?v=638506236374300000",
+      "preco": 200,
+      "promo": 50,
+      "descricao": "Impressora Multifuncional Epson EcoTank, impressão rápida e de alta qualidade."
+    },
+    {
+      "id": "4",
+      "titulo": "Computador e Monitor",
+      "urlFoto": "https://s.zst.com.br/cms-assets/2021/07/tela-preta-no-pc-ou-notebook-durante-instala-o-ou-atualiza-o.jpg",
+      "preco": 250,
+      "promo": 0,
+      "descricao": "Computador com processador Intel i5, 8GB RAM, 256GB SSD e monitor 24 polegadas."
+    },
+    {
+      "id": "5",
+      "titulo": "MacBook Air",
+      "urlFoto": "https://www.mastertronic.com.br/media/catalog/product/cache/1/image/1000x1000/9df78eab33525d08d6e5fb8d27136e95/m/g/mgna3_certo_2.jpg",
+      "preco": 400,
+      "promo": 99.99,
+      "descricao": "MacBook Air 13, Chip M1 7-Core, SSD 256GB, 8GB - Prata."
+    },
+    {
+      "id": "6",
+      "titulo": "Impressora Impressora HP LaserJet",
+      "urlFoto": "https://xtech.com.br/config/imagens_conteudo/produtos/imagensGRD/CF286A.jpg",
+      "preco": 270,
+      "promo": 0,
+      "descricao": "Impressora HP LaserJet Pro 400, impressão rápida e de alta qualidade."
+    },
+    {
+      "id": "7",
+      "titulo": "PC Gamer",
+      "urlFoto": "https://m.media-amazon.com/images/I/61rlEGf5l6L.jpg",
+      "preco": 450,
+      "promo": 100,
+      "descricao": "PC GAMER AMD RYZEN 7 5600GT - 16GB DDR4 - SSD 240GB - MONITOR 19 polegadas - KIT GAMER RGB."
+    },
+    {
+      "id": "8",
+      "titulo": "Notebook Gamer",
+      "urlFoto": "https://images6.kabum.com.br/produtos/fotos/564916/notebook-gamer-acer-nitro-v15-intel-core-i5-13420h-8gb-ram-geforce-rtx-3050-ssd-512gb-15-6-fhd-ips-144hz-windows-11-preto-anv15-51-58az_1715197002_g.jpg",
+      "preco": 500,
+      "promo": 150,
+      "descricao": "Notebook Gamer Acer Nitro V15 Intel Core i5, 8GB RAM, GeForce RTX 3050, SSD 512GB, 15.6 polegadas FHD IPS 144Hz, Preto."
+    },
+    {
+      "id": "9",
+      "titulo": "Kit de acessórios",
+      "urlFoto": "https://lojaibyte.vteximg.com.br/arquivos/ids/430427-1200-1200/kit-gamer-gt-com-headset-teclado-mouse-mousepad-001-min.jpg?v=638557873974000000",
+      "preco": 59.99,
+      "promo": 0,
+      "descricao": "Kit Gamer Goldentec com Headset + Teclado + Mouse 1200DPI + Mousepad."
+    }
+  ],
+  "leasing": [
+    {
+      "id": "1",
+      "titulo": "Leasing de Computador Completo",
+      "urlFoto": "https://thumbs.dreamstime.com/b/computador-de-secret%C3%A1ria-com-foto-que-edita-o-software-27075400.jpg",
+      "preco": 30,
+      "descricao": "Leasing mensal para computador completo com monitor, teclado e mouse."
+    },
+    {
+      "id": "af48",
+      "name": "",
+      "endereco": "",
+      "cep": "",
+      "cpf": "",
+      "dtainicio": "",
+      "dtafim": "",
+      "aceitaTermos": false,
+      "aceitaDiaria": false
+    },
+    {
+      "id": "b700",
+      "name": "",
+      "endereco": "",
+      "cep": "",
+      "cpf": "",
+      "dtainicio": "",
+      "dtafim": "",
+      "aceitaTermos": false,
+      "aceitaDiaria": false
+    },
+    {
+      "id": "5f3f",
+      "name": "",
+      "endereco": "",
+      "cep": "",
+      "cpf": "",
+      "dtainicio": "",
+      "dtafim": "",
+      "aceitaTermos": false,
+      "aceitaDiaria": false
+    },
+    {
+      "id": "04de",
+      "name": "",
+      "endereco": "",
+      "cep": "",
+      "cpf": "",
+      "dtainicio": "",
+      "dtafim": "",
+      "aceitaTermos": false,
+      "aceitaDiaria": false
+    },
+    {
+      "id": "1",
+      "name": "aaaa",
+      "endereco": "aaaa",
+      "cep": "aaaaa",
+      "cpf": "aaa",
+      "dtainicio": "aaa",
+      "dtafim": "aaaa",
+      "aceitaTermos": true,
+      "aceitaDiaria": true,
+      "produtoAlugado": {
+        "id": "1",
         "titulo": "Computador Completo Monitor Teclado e Mouse",
         "urlFoto": "https://thumbs.dreamstime.com/b/computador-de-secret%C3%A1ria-com-foto-que-edita-o-software-27075400.jpg",
-        "preco": 300.0,
-        "promo": 0.00,
+        "preco": 300,
+        "promo": 0,
         "descricao": "Computador Completo com processador Intel Core i5, 8GB RAM, 256GB SSD, monitor 19 polegadas, teclado e mouse."
-      },
-      {
+      }
+    },
+    {
+      "id": "2",
+      "name": "tttt",
+      "endereco": "ttttt",
+      "cep": "tttt",
+      "cpf": "tttt",
+      "dtainicio": "",
+      "dtafim": "",
+      "aceitaTermos": true,
+      "aceitaDiaria": true
+    },
+    {
+      "id": "2",
+      "name": "555555",
+      "endereco": "55555",
+      "cep": "5555",
+      "cpf": "555",
+      "dtainicio": "5555",
+      "dtafim": "55555",
+      "aceitaTermos": true,
+      "aceitaDiaria": true,
+      "produto_alugado": {
         "id": "2",
         "titulo": "Notebook Dell",
         "urlFoto": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/inspiron-notebooks/15-3520/media-gallery/notebook-inspiron-15-3520-black-gallery-10.psd?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=606&qlt=100,1&resMode=sharp2&size=606,402&chrss=full",
-        "preco": 350.0,
-        "promo": 99.00,
+        "preco": 350,
+        "promo": 99,
         "descricao": "Notebook de 15,6 polegadas com processador Intel Core i7 de 12ª geração, 8GB RAM, 512GB SSD, em um design elegante e sustentável, com recursos essenciais para o uso diário."
-      },
-      {
-        "id": "3",
-        "titulo": "Impressora Epson",
-        "urlFoto": "https://www.fujioka.com.br/arquivos/ids/278569-1000-1000/p_57924_alta_1.png?v=638506236374300000",
-        "preco": 200.0,
-        "promo": 50.00,
-        "descricao": "Impressora Multifuncional Epson EcoTank, impressão rápida e de alta qualidade."
-      },
-      {
-        "id": "4",
-        "titulo": "Computador e Monitor",
-        "urlFoto": "https://s.zst.com.br/cms-assets/2021/07/tela-preta-no-pc-ou-notebook-durante-instala-o-ou-atualiza-o.jpg",
-        "preco": 250.0,
-        "promo": 0.0,
-        "descricao": "Computador com processador Intel i5, 8GB RAM, 256GB SSD e monitor 24 polegadas."
-      },
-      {
-        "id": "5",
-        "titulo": "MacBook Air",
-        "urlFoto": "https://www.mastertronic.com.br/media/catalog/product/cache/1/image/1000x1000/9df78eab33525d08d6e5fb8d27136e95/m/g/mgna3_certo_2.jpg",
-        "preco": 400.0,
-        "promo": 99.99,
-        "descricao": "MacBook Air 13, Chip M1 7-Core, SSD 256GB, 8GB - Prata."
-      },
-      {
-        "id": "6",
-        "titulo": "Impressora Impressora HP LaserJet",
-        "urlFoto": "https://xtech.com.br/config/imagens_conteudo/produtos/imagensGRD/CF286A.jpg",
-        "preco": 270.0,
-        "promo": 0.0,
-        "descricao": "Impressora HP LaserJet Pro 400, impressão rápida e de alta qualidade."
-      },
-      {
-        "id": "7",
-        "titulo": "PC Gamer",
-        "urlFoto": "https://m.media-amazon.com/images/I/61rlEGf5l6L.jpg",
-        "preco": 450.0,
-        "promo": 100.0,
-        "descricao": "PC GAMER AMD RYZEN 7 5600GT - 16GB DDR4 - SSD 240GB - MONITOR 19 polegadas - KIT GAMER RGB."
-      },
-      {
-        "id": "8",
-        "titulo": "Notebook Gamer",
-        "urlFoto": "https://images6.kabum.com.br/produtos/fotos/564916/notebook-gamer-acer-nitro-v15-intel-core-i5-13420h-8gb-ram-geforce-rtx-3050-ssd-512gb-15-6-fhd-ips-144hz-windows-11-preto-anv15-51-58az_1715197002_g.jpg",
-        "preco": 500.0,
-        "promo": 150.00,
-        "descricao": "Notebook Gamer Acer Nitro V15 Intel Core i5, 8GB RAM, GeForce RTX 3050, SSD 512GB, 15.6 polegadas FHD IPS 144Hz, Preto."
-      },
-      {
-        "id": "9",
-        "titulo": "Kit de acessórios",
-        "urlFoto": "https://lojaibyte.vteximg.com.br/arquivos/ids/430427-1200-1200/kit-gamer-gt-com-headset-teclado-mouse-mousepad-001-min.jpg?v=638557873974000000",
-        "preco": 59.99,
-        "promo": 0.0,
-        "descricao": "Kit Gamer Goldentec com Headset + Teclado + Mouse 1200DPI + Mousepad."
       }
-    ]
-  }
+    }
+  ]
+}

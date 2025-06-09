@@ -51,7 +51,9 @@ const routes = [
     children: [{ path: '', component: () => import('pages/PromoPage.vue') }],
   },
   {
-    path: '/alugar',
+    path: '/alugar/:productId',
+    name: 'alugar',
+    meta: { requiresAuth: true },
     component: () => import('layouts/MainLayout.vue'),
     children: [{ path: '', component: () => import('pages/LeasingPage.vue') }],
   },
