@@ -16,9 +16,9 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { computed } from 'vue'
 
-defineProps({
+const props = defineProps({
   modelValue: {
     type: String,
     default: '',
@@ -45,7 +45,12 @@ defineProps({
   },
 })
 
-const modelValueLocal = ref('')
+const emit = defineEmits(['update:modelValue'])
+
+const modelValueLocal = computed({
+  get: () => props.modelValue,
+  set: (val) => emit('update:modelValue', val),
+})
 </script>
 
 <style scoped>

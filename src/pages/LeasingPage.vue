@@ -18,9 +18,9 @@
       <form class="container-form" @submit.prevent="alugarProduto">
         <div>
           <TextInput v-model="name" placeholder="Digite nome completo" />
+          <TextInput v-model="cpf" placeholder="Digite CPF" />
           <TextInput v-model="cep" placeholder="Digite CEP" />
           <TextInput v-model="endereco" placeholder="Digite endereço completo" />
-          <TextInput v-model="cpf" placeholder="Digite CPF" />
           <TextInput v-model="dtainicio" placeholder="Data de início ex: DD/MM/AAAA" />
           <TextInput v-model="dtafim" placeholder="Data fim ex: DD/MM/AAAA" />
           <q-checkbox v-model="aceitaTermos" label="Aceito os termos e condições" />
@@ -91,44 +91,27 @@ export default {
       const response = await getProduto(id)
       this.produto = {
         ...response,
-        alugueis: response.alugueis || [], // Garante que alugueis seja um array
-        alugado: response.alugado || false, // Garante que alugado tenha um valor padrão
+        alugueis: response.alugueis || [],
+        alugado: response.alugado || false,
       }
       console.log('Resposta do servidor:', this.produto)
     } catch (error) {
       console.error('Erro ao buscar produto:', error)
-      this.produto = { alugueis: [], alugado: false } // Valor padrão em caso de erro
+      this.produto = { alugueis: [], alugado: false }
     }
   },
+
   watch: {
-    // Monitora mudanças em dtainicio
-    dtainicio(newValue) {
-      console.log('dtainicio alterado:', newValue)
+    dtainicio: 'validateForm',
+    dtafim() {
       this.validateForm()
+      this.calcularDiasAluguel()
     },
-    // Monitora mudanças em dtafim
-    dtafim(newValue) {
-      console.log('dtafim alterado:', newValue)
-
-      if (isValidDate(newValue)) {
-        console.log('Data de fim válida:', newValue)
-
-        this.diffDays = calcularDiasAluguel(this.dtainicio, newValue)
-        console.log('Dias de aluguel calculados:', this.diffDays)
-
-        console.log('Dias de aluguel calculados:', this.diffDays)
-      }
-      this.validateForm()
-    },
-    // Monitora outros campos para validar o formulário
     name: 'validateForm',
     endereco: 'validateForm',
-    cep(newValue) {
-      console.log('CPF alterado:', newValue)
+    async cep(newValue) {
       if (validaCep(newValue)) {
-        console.log('CEP válido:', newValue)
-        this.buscaCep(newValue)
-
+        await this.buscaCep(newValue)
         this.validateForm()
       } else {
         console.error('CEP inválido:', newValue)
@@ -139,19 +122,21 @@ export default {
     aceitaDiaria: 'validateForm',
   },
   methods: {
+    // Calcula a diferença de dias entre as datas de início e fim
+    calcularDiasAluguel() {
+      if (isValidDate(this.dtainicio) && isValidDate(this.dtafim)) {
+        this.diffDays = calcularDiasAluguel(this.dtainicio, this.dtafim)
+      } else {
+        this.diffDays = 0
+      }
+    },
+
     async buscaCep(cep) {
       try {
         const response = await getCepData(cep)
-        this.endereco =
-          response.street +
-          ', ' +
-          response.neighborhood +
-          ', ' +
-          response.city +
-          ', ' +
-          response.state
+        this.endereco = `${response.street}, ${response.neighborhood}, ${response.city} - ${response.state}`
+        console.log('Dados do CEP:', this.endereco)
 
-        console.log('Dados do CEP:', response)
         return response
       } catch (error) {
         console.error('Erro ao buscar CEP:', error)
@@ -171,7 +156,6 @@ export default {
     },
     async cadastrarAluguel() {
       if (!this.isFormValid) {
-        console.error('Por favor, preencha todos os campos do formulário.')
         return
       }
 
@@ -199,8 +183,7 @@ export default {
       }
 
       try {
-        const response = await postLeasing(aluguel)
-        console.log('Aluguel cadastrado com sucesso:', response)
+        await postLeasing(aluguel)
         this.alugarProduto()
       } catch (error) {
         console.error('Erro ao cadastrar aluguel:', error)
@@ -215,7 +198,7 @@ export default {
 
 <style scoped>
 .container {
-  max-width: 90%;
+  max-width: 70%;
   margin: auto;
   padding: 10px;
   background-color: #dfeafd;
@@ -249,7 +232,7 @@ export default {
   border-radius: 15px;
 }
 .texto-produto {
-  max-width: 400px;
+  max-width: 300px;
   margin-left: 20px;
   padding: 10px;
 }

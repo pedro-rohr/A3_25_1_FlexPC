@@ -1,5 +1,8 @@
 export const  calcularDiasAluguel = (dataInicioStr, dataFimStr)  => {
 
+  console.log(`Calculando dias de aluguel entre ${dataInicioStr} e ${dataFimStr}`);
+
+
   function parseData(dataStr) {
     const [dia, mes, ano] = dataStr.split('/').map(Number);
     return new Date(ano, mes - 1, dia);

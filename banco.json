@@ -125,6 +125,78 @@
           "alugado": false
         }
       ]
+    },
+    {
+      "id": "3",
+      "name": "ABner",
+      "endereco": "Travessa Américo Silveira, Cristo Redentor, Porto Alegre, RS",
+      "cep": "91370-010",
+      "cpf": "0102123123123",
+      "dtainicio": "05/05/1995",
+      "dtafim": "10/06/2025",
+      "aceitaTermos": true,
+      "aceitaDiaria": true,
+      "produto_alugado": [
+        {
+          "id": "3",
+          "titulo": "Impressora Epson",
+          "urlFoto": "https://www.fujioka.com.br/arquivos/ids/278569-1000-1000/p_57924_alta_1.png?v=638506236374300000",
+          "preco": 200,
+          "promo": 50,
+          "maisDetalhes": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "descricao": "Impressora Multifuncional Epson EcoTank, impressão rápida e de alta qualidade.",
+          "alugueis": [],
+          "alugado": false
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "aaaaa",
+      "endereco": "aaaaa",
+      "cep": "91370010",
+      "cpf": "aaaaaa",
+      "dtainicio": "05/05/1995",
+      "dtafim": "08/05/1996",
+      "aceitaTermos": true,
+      "aceitaDiaria": true,
+      "produto_alugado": [
+        {
+          "id": "2",
+          "titulo": "Notebook Dell",
+          "urlFoto": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/inspiron-notebooks/15-3520/media-gallery/notebook-inspiron-15-3520-black-gallery-10.psd?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=606&qlt=100,1&resMode=sharp2&size=606,402&chrss=full",
+          "preco": 350,
+          "promo": 99,
+          "maisDetalhes": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "descricao": "Notebook de 15,6 polegadas com processador Intel Core i7 de 12ª geração, 8GB RAM, 512GB SSD, em um design elegante e sustentável, com recursos essenciais para o uso diário.",
+          "alugueis": [],
+          "alugado": false
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "name": "Abner Fonseca",
+      "endereco": "Travessa Américo Silveira, Cristo Redentor, Porto Alegre - RS",
+      "cep": "91370-010",
+      "cpf": "000000000000000",
+      "dtainicio": "05/05/1995",
+      "dtafim": "09/05/1996",
+      "aceitaTermos": true,
+      "aceitaDiaria": true,
+      "produto_alugado": [
+        {
+          "id": "1",
+          "titulo": "Computador Completo Monitor Teclado e Mouse",
+          "urlFoto": "https://thumbs.dreamstime.com/b/computador-de-secret%C3%A1ria-com-foto-que-edita-o-software-27075400.jpg",
+          "preco": 300,
+          "promo": 0,
+          "maisDetalhes": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "descricao": "Computador Completo com processador Intel Core i5, 8GB RAM, 256GB SSD, monitor 19 polegadas, teclado e mouse.",
+          "alugueis": [],
+          "alugado": false
+        }
+      ]
     }
   ]
 }
