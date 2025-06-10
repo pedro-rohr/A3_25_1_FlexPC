@@ -10,11 +10,7 @@
         {{ produto.descricao }}
       </q-card-section>
       <q-card-actions align="right">
-        <q-btn
-          label="Alugar produto"
-          class="bg-light-blue-8 text-white"
-          @click="alugarProduto(produto.id)"
-        />
+        <q-btn label="Alugar produto" class="text-white" @click="alugarProduto(produto.id)" />
       </q-card-actions>
     </q-card>
   </div>

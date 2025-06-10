@@ -28,14 +28,15 @@
             <q-tooltip>Sair</q-tooltip>
           </q-btn>
         </div>
-        <q-btn
+        <!-- Descomente se precisar de um botão de menu à direita -->
+        <!-- <q-btn
           v-if="authStore.isAuthenticated"
           dense
           flat
           round
           icon="menu"
           @click="toggleRightDrawer"
-        />
+        /> -->
       </q-toolbar>
     </q-header>
     <q-drawer
@@ -65,15 +66,17 @@
         </q-item>
       </q-list>
     </q-drawer>
-    <q-drawer
+
+    <!-- Descomente se precisar de um drawer à direita -->
+    <!-- <q-drawer
       v-if="authStore.isAuthenticated"
       show-if-above
       v-model="rightDrawerOpen"
       side="right"
       bordered
-    >
-      <!-- carrinho? -->
-    </q-drawer>
+    > -->
+    <!-- carrinho? -->
+    <!-- </q-drawer> -->
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -122,12 +125,14 @@ export default {
 
   methods: {
     toggleLeftDrawer() {
+      // Alterna o estado do drawer à esquerda
       this.leftDrawerOpen = !this.leftDrawerOpen
     },
 
-    toggleRightDrawer() {
-      this.rightDrawerOpen = !this.rightDrawerOpen
-    },
+    // Descomente se precisar de um drawer à direita
+    // toggleRightDrawer() {
+    //   this.rightDrawerOpen = !this.rightDrawerOpen
+    // },
 
     handleLogout() {
       this.authStore.logout()
