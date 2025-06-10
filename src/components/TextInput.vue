@@ -10,6 +10,9 @@
       @input="$emit('update:modelValue', modelValueLocal)"
     />
   </div>
+  <div v-if="error" class="text-input__error">
+    {{ errorMessage }}
+  </div>
 </template>
 
 <script setup>
@@ -32,6 +35,14 @@ defineProps({
     type: String,
     default: () => `text-input-${Math.random().toString(36).substr(2, 9)}`,
   },
+  error: {
+    type: Boolean,
+    default: false,
+  },
+  errorMessage: {
+    type: String,
+    default: 'This field is required',
+  },
 })
 
 const modelValueLocal = ref('')
@@ -52,5 +63,9 @@ const modelValueLocal = ref('')
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 1rem;
+}
+.text-input__input:focus {
+  border-color: #007bff;
+  outline: none;
 }
 </style>

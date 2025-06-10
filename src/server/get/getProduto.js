@@ -1,6 +1,7 @@
-import api from '../api.js';
+import { apiLocal } from "../api";
+
 const getProduto = (id) => {
-  return api.get(`/produtos/${id}`)
+  return apiLocal.get(`/produtos/${id}`)
     .then(response => {
       console.log('Product data fetched successfully:', response.data);
       return response.data;

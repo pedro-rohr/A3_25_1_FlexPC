@@ -5,29 +5,24 @@
         <img class="image-produto" :src="produto.urlFoto" alt="Imagem do produto" />
       </div>
       <div class="texto-produto">
-        <h1>{{ produto.titulo }}</h1>
+        <h2>{{ produto.titulo }}</h2>
         <h2>Sobre este item:</h2>
-        <p>
-          {{ produto.descricao }}
-        </p>
+        <p>{{ produto.descricao }}</p>
       </div>
       <div class="texto-produto">
-        <h1>Mais detalhes</h1>
-        <h2></h2>
-        <p>
-          {{ produto.detalhes || '-' }}
-        </p>
+        <h2>Mais detalhes</h2>
+        <p>{{ produto.maisDetalhes || '-' }}</p>
       </div>
     </div>
     <div>
       <form class="container-form" @submit.prevent="alugarProduto">
         <div>
           <TextInput v-model="name" placeholder="Digite nome completo" />
-          <TextInput v-model="endereco" placeholder="Digite endereço completo" />
           <TextInput v-model="cep" placeholder="Digite CEP" />
+          <TextInput v-model="endereco" placeholder="Digite endereço completo" />
           <TextInput v-model="cpf" placeholder="Digite CPF" />
-          <TextInput v-model="dtainicio" placeholder="Digite Data de inicio" />
-          <TextInput v-model="dtafim" placeholder="Digite Data fim" />
+          <TextInput v-model="dtainicio" placeholder="Data de início ex: DD/MM/AAAA" />
+          <TextInput v-model="dtafim" placeholder="Data fim ex: DD/MM/AAAA" />
           <q-checkbox v-model="aceitaTermos" label="Aceito os termos e condições" />
           <q-checkbox
             v-model="aceitaDiaria"
@@ -37,18 +32,22 @@
         <div class="container-resumo">
           <h1 class="titulo-resumo">Resumo financeiro</h1>
           <h2 class="sub-titulo-resumo">Tempo total alugado:</h2>
-          <p class="texto-resumo">10 dias</p>
-          <h2 class="sub-titulo-resumo">Valor diaria:</h2>
-          <p class="texto-resumo">{{ produto.preco }}</p>
+          <p class="texto-resumo">{{ diffDays }} dias</p>
+          <h2 class="sub-titulo-resumo">Valor diária:</h2>
+          <p class="texto-resumo">{{ produto.preco || 'N/A' }}</p>
           <h2 class="sub-titulo-resumo">Total a pagar:</h2>
-          <p class="texto-resumo">10 dias x {{ produto.preco }} = {{ 10 * produto.preco }}</p>
+          <p class="texto-resumo">
+            {{ diffDays }} dias x {{ produto.preco || 'N/A' }} =
+            {{ diffDays * (produto.preco || 0) }}
+          </p>
           <h2 class="sub-titulo-resumo">Valor total a pagar:</h2>
-          <p class="valor-final">R$ {{ 10 * produto.preco }}</p>
+          <p class="valor-final">R$ {{ diffDays * (produto.preco || 0) }}</p>
           <q-btn
             type="submit"
             label="Alugar Produto"
             class="text-white button"
             @click="cadastrarAluguel"
+            :disabled="!isFormValid"
           />
         </div>
       </form>
@@ -60,16 +59,15 @@
 import TextInput from 'src/components/TextInput.vue'
 import postLeasing from '../server/post/postLeasing.js'
 import getProduto from 'src/server/get/getProduto.js'
+import { calcularDiasAluguel, isValidDate } from 'src/utils/dateFunctions.js'
+import { validaCep } from 'src/utils/validaCep.js'
+import { getCepData } from 'src/server/get/getCep.js'
 
 export default {
   name: 'aluguelPage',
-  props: {},
   data() {
     return {
-      produto: {},
-      // Dados do formulário
-      // Usando refs para vincular os campos do formulário
-      // Dados do aluguel
+      produto: { alugueis: [], alugado: false }, // Inicializa com valores padrão
       name: '',
       endereco: '',
       cep: '',
@@ -78,6 +76,10 @@ export default {
       dtafim: '',
       aceitaTermos: false,
       aceitaDiaria: false,
+      diffDays: 0,
+      isFormValid: false,
+      isAluguelActive: false,
+      isProdutoAlugado: false,
     }
   },
   components: {
@@ -85,17 +87,104 @@ export default {
   },
   async created() {
     const id = this.$route.params.productId
-
     try {
       const response = await getProduto(id)
-      this.produto = response
-      console.log('Resposta do servidor:', response)
+      this.produto = {
+        ...response,
+        alugueis: response.alugueis || [], // Garante que alugueis seja um array
+        alugado: response.alugado || false, // Garante que alugado tenha um valor padrão
+      }
+      console.log('Resposta do servidor:', this.produto)
     } catch (error) {
       console.error('Erro ao buscar produto:', error)
+      this.produto = { alugueis: [], alugado: false } // Valor padrão em caso de erro
     }
   },
+  watch: {
+    // Monitora mudanças em dtainicio
+    dtainicio(newValue) {
+      console.log('dtainicio alterado:', newValue)
+      this.validateForm()
+    },
+    // Monitora mudanças em dtafim
+    dtafim(newValue) {
+      console.log('dtafim alterado:', newValue)
+
+      if (isValidDate(newValue)) {
+        console.log('Data de fim válida:', newValue)
+
+        this.diffDays = calcularDiasAluguel(this.dtainicio, newValue)
+        console.log('Dias de aluguel calculados:', this.diffDays)
+
+        console.log('Dias de aluguel calculados:', this.diffDays)
+      }
+      this.validateForm()
+    },
+    // Monitora outros campos para validar o formulário
+    name: 'validateForm',
+    endereco: 'validateForm',
+    cep(newValue) {
+      console.log('CPF alterado:', newValue)
+      if (validaCep(newValue)) {
+        console.log('CEP válido:', newValue)
+        this.buscaCep(newValue)
+
+        this.validateForm()
+      } else {
+        console.error('CEP inválido:', newValue)
+      }
+    },
+    cpf: 'validateForm',
+    aceitaTermos: 'validateForm',
+    aceitaDiaria: 'validateForm',
+  },
   methods: {
+    async buscaCep(cep) {
+      try {
+        const response = await getCepData(cep)
+        this.endereco =
+          response.street +
+          ', ' +
+          response.neighborhood +
+          ', ' +
+          response.city +
+          ', ' +
+          response.state
+
+        console.log('Dados do CEP:', response)
+        return response
+      } catch (error) {
+        console.error('Erro ao buscar CEP:', error)
+      }
+    },
+    // Valida o formulário
+    validateForm() {
+      this.isFormValid =
+        this.name &&
+        this.endereco &&
+        this.cep &&
+        this.cpf &&
+        this.dtainicio &&
+        this.dtafim &&
+        this.aceitaTermos &&
+        this.aceitaDiaria
+    },
     async cadastrarAluguel() {
+      if (!this.isFormValid) {
+        console.error('Por favor, preencha todos os campos do formulário.')
+        return
+      }
+
+      // Verificar se há aluguéis ativos
+      if (Array.isArray(this.produto.alugueis) && this.produto.alugueis.length > 0) {
+        console.error('Você já possui um aluguel ativo para este produto.')
+        return
+      }
+      if (this.produto.alugado) {
+        console.error('Este produto já está alugado.')
+        return
+      }
+
       const aluguel = {
         id: this.produto.id,
         name: this.name,
@@ -106,19 +195,17 @@ export default {
         dtafim: this.dtafim,
         aceitaTermos: this.aceitaTermos,
         aceitaDiaria: this.aceitaDiaria,
-        produto_alugado: this.produto,
+        produto_alugado: [this.produto],
       }
 
       try {
         const response = await postLeasing(aluguel)
         console.log('Aluguel cadastrado com sucesso:', response)
-
         this.alugarProduto()
       } catch (error) {
         console.error('Erro ao cadastrar aluguel:', error)
       }
     },
-
     alugarProduto() {
       this.$router.push('/')
     },
@@ -134,14 +221,18 @@ export default {
   background-color: #dfeafd;
   margin-top: 60px;
   border-radius: 15px;
-  @media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 768px) {
+  .container {
     max-width: 100%;
   }
 }
 .container-produto {
   display: flex;
   flex-direction: row;
-  @media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 768px) {
+  .container-produto {
     flex-wrap: wrap;
   }
 }
@@ -161,22 +252,26 @@ export default {
   max-width: 400px;
   margin-left: 20px;
   padding: 10px;
-  h1 {
-    font-size: 24px;
-  }
-  h2 {
-    font-size: 20px;
-  }
-  p {
-    font-size: 16px;
-  }
+}
+.texto-produto h1 {
+  line-height: 0px;
+  font-size: 24px;
+}
+.texto-produto h2 {
+  line-height: 30px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.texto-produto p {
+  font-size: 16px;
 }
 .container-form {
   display: flex;
   flex-direction: row;
   border-radius: 8px;
-
-  @media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 768px) {
+  .container-form {
     flex-direction: column;
     width: 100%;
   }
@@ -194,8 +289,10 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #0860e0;
-  @media screen and (max-width: 768px) {
+  justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  .container-resumo {
     width: 100%;
   }
 }
@@ -206,9 +303,9 @@ export default {
 }
 .sub-titulo-resumo {
   font-weight: bold;
-
   font-size: 20px;
   color: white;
+  line-height: 3px;
 }
 .texto-resumo {
   font-size: 16px;
@@ -218,9 +315,7 @@ export default {
   font-weight: bold;
   font-size: 24px;
   color: #0cff5d;
-  font-weight: bold;
 }
-
 .button {
   margin-top: 10px;
   width: 100%;
