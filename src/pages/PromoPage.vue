@@ -1,10 +1,10 @@
 <template>
   <q-page class="flex flex-center bg-light-blue-1 pads text-light-blue-10">
-    <div>
+    <div class="container">
       <div class="textoCentro">
         <h1 class="textoCentro" style="font-weight: bold; font-size: 50px">Promoções</h1>
       </div>
-      <div>
+      <div class="flexDisplay">
         <ListaPromo />
       </div>
     </div>
@@ -45,5 +45,16 @@ export default defineComponent({
 .textoCentro {
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flexDisplay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

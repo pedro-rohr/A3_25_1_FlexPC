@@ -1,7 +1,7 @@
 <template>
   <div
     ref="lottieContainer"
-    style="width: 130px; height: 130px; margin-left: -20px; margin-top: -25px"
+    style="width: 150px; height: 150px; margin-left: -20px; margin-top: -25px"
   ></div>
 </template>
 
