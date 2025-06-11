@@ -45,8 +45,18 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* Responsive design */
   @media screen and (max-width: 600px) {
     width: 100%;
+    padding: 0;
+  }
+  @media screen and (min-width: 601px) and (max-width: 1200px) {
+    width: 90%;
+    padding: 10px;
+  }
+  @media screen and (min-width: 1800px) {
+    width: 80%;
+    padding: 20px;
   }
 }
 .pads {

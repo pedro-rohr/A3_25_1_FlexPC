@@ -8,12 +8,18 @@
 
       <div class="bg-light-blue-8 flexDisplay">
         <div class="text-h6 text-white layout title-card">{{ titulo }}</div>
-        <div class="text-h6 text-white layout value-card">{{ formatarPreco(preco - promo) }}</div>
+        <div v-if="promo !== 0" class="container-valor">
+          <p class="preco-normal">{{ formatarPreco(preco) }}</p>
+          <p class="preco-novo">{{ formatarPreco(preco - promo) }}</p>
+        </div>
+        <div v-else class="container-valor">
+          <p class="preco-novo">{{ formatarPreco(preco) }}</p>
+        </div>
       </div>
       <q-card-section class="bg-white-1 text-black maxText">
         {{ descricao }}
       </q-card-section>
-      <q-card-actions align="right">
+      <q-card-actions class="absolute-bottom-right">
         <q-btn label="Ver Produto" class="bg-light-blue-8 text-white" @click="verProduto" />
       </q-card-actions>
     </q-card>
@@ -55,7 +61,7 @@ export default {
 
 <style>
 .my-card {
-  width: 370px;
+  width: 300px;
   height: 400px;
   max-width: 400px;
   margin: 10px;
@@ -73,15 +79,15 @@ export default {
 
 .ajusta-imagem {
   width: 100%;
-  height: 250px;
+  height: 200px;
   object-fit: cover;
-  border-radius: 15px 15px 0 0;
 }
 
 .maxText {
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: wrap;
+  max-height: 100px;
   max-width: 100%;
 }
 
@@ -89,14 +95,41 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  max-width: 250px;
+  width: 240px;
   font-size: 16px;
   max-height: 50px;
+  margin: 0;
+  padding: 10px 0 0 10px;
 }
 
 .value-card {
   max-width: 100%;
   font-size: 16px;
   max-height: 50px;
+}
+
+.container-valor {
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+.preco-normal {
+  text-decoration: line-through;
+  color: #ff0000;
+  margin: 0 10px 0 0;
+  padding: 0;
+}
+
+.preco-novo {
+  color: #05ff04;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  text-align: end;
 }
 </style>
