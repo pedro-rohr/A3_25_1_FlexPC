@@ -36,7 +36,15 @@ const routes = [
       meta: { requiresAuth: true } 
     }],
   },
-
+  {
+    path: '/produto/:id/edit',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [{ 
+      path: '', 
+      component: () => import('pages/ProdutoEdit.vue'),
+      meta: { requiresAuth: true } 
+    }],
+  },
   {
     path: '/sobre',
     component: () => import('layouts/MainLayout.vue'),

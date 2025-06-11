@@ -132,11 +132,8 @@ export default {
        
         if (success) {
           this.success = 'Login realizado com sucesso!'
-          
-          // Redirecionar após 1 segundo
-          setTimeout(() => {
             this.$router.push('/')
-          }, 1000)
+
         } else {
           this.error = 'Credenciais inválidas'
         }

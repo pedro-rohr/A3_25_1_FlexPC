@@ -41,7 +41,7 @@
     components: { ListaPromo }, CardProduto
   })
   </script>
-  <style>
+  <style scoped>
   .pads {
     padding: 20px;
   }

@@ -11,6 +11,12 @@
       </q-card-section>
       <q-card-actions align="right">
         <q-btn
+          v-if="authStore.isAdmin"
+            label="Editar Produto"
+            class="bg-light-blue-8 text-white"
+            @click="editarProduto"
+          />
+        <q-btn
           label="Alugar produto"
           class="bg-light-blue-8 text-white"
           @click="alugarProduto(produto.id)"
@@ -21,6 +27,7 @@
 </template>
 
 <script>
+import { useAuthStore } from 'src/stores/auth'
 export default {
   name: 'ProdutoPage',
   props: {
@@ -38,17 +45,18 @@ export default {
           })
         })
         .catch()
+        this.authStore = useAuthStore()
     },
-  // methods: {
-  //   alugarProduto() {
-  //
-  //     })
-  //   },
-  // },
-}
+  methods: {
+    editarProduto(){
+          this.$router.push(`${this.$route.params.id}/edit`)
+        }
+    },
+  }
+
 </script>
 
-<style>
+<style scoped>
 .my-card-produto{
   width: 100%;
   max-width: 1920px}
