@@ -120,8 +120,8 @@ export default {
 .preco-normal {
   text-decoration: line-through;
   color: #ff0000;
-  margin: 0 10px 0 0;
-  padding: 0;
+  margin: 0;
+  padding: 0 10px 0 0;
 }
 
 .preco-novo {
@@ -129,7 +129,7 @@ export default {
   font-weight: bold;
   font-size: 16px;
   margin: 0;
-  padding: 0;
+  padding: 0 5px 0 0;
   text-align: end;
 }
 </style>

@@ -14,9 +14,9 @@
         <p>{{ produto.maisDetalhes || '-' }}</p>
       </div>
     </div>
-    <div>
+    <div class="container-aluguel">
       <form class="container-form" @submit.prevent="alugarProduto">
-        <div>
+        <div class="formulario">
           <TextInput v-model="name" placeholder="Digite nome completo" />
           <TextInput v-model="cpf" placeholder="Digite CPF" />
           <TextInput v-model="cep" placeholder="Digite CEP" />
@@ -248,11 +248,23 @@ export default {
 .texto-produto p {
   font-size: 16px;
 }
+
+.container-aluguel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+}
 .container-form {
   display: flex;
   flex-direction: row;
-  border-radius: 8px;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
 }
+
 @media screen and (max-width: 768px) {
   .container-form {
     flex-direction: column;
