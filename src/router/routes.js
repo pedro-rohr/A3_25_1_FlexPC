@@ -2,8 +2,8 @@ const routes = [
   {
     path: '/login',
     component: () => import('layouts/MainLayout.vue'),
-    children: [{ 
-      path: '', 
+    children: [{
+      path: '',
       component: () => import('pages/LoginPage.vue'),
       meta: { requiresGuest: true }
     }],
@@ -11,8 +11,8 @@ const routes = [
   {
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
-    children: [{ 
-      path: '', 
+    children: [{
+      path: '',
       component: () => import('pages/IndexPage.vue'),
       meta: { requiresAuth: true }
     }],
@@ -21,8 +21,8 @@ const routes = [
   {
     path: '/produto',
     component: () => import('layouts/MainLayout.vue'),
-    children: [{ 
-      path: '', 
+    children: [{
+      path: '',
       component: () => import('pages/ProdutoPage.vue'),
       meta: { requiresAuth: true }
     }],
@@ -30,10 +30,10 @@ const routes = [
   {
     path: '/produto/:id',
     component: () => import('layouts/MainLayout.vue'),
-    children: [{ 
-      path: '', 
+    children: [{
+      path: '',
       component: () => import('pages/ProdutoPage.vue'),
-      meta: { requiresAuth: true } 
+      meta: { requiresAuth: true }
     }],
   },
 
@@ -50,6 +50,14 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [{ path: '', component: () => import('pages/PromoPage.vue') }],
   },
+  {
+    path: '/alugar/:productId',
+    name: 'alugar',
+    meta: { requiresAuth: true },
+    component: () => import('layouts/MainLayout.vue'),
+    children: [{ path: '', component: () => import('pages/LeasingPage.vue') }],
+  },
+
 
   // Always leave this as last one,
   // but you can also remove it
