@@ -23,6 +23,23 @@
               hint="https://exemplo.com/foto.jpg"
             />
   
+            
+            <q-input
+              filled
+              v-model="produto.descricao"
+              label="Descrição"
+              type="textarea"
+              rows="4"
+            />
+
+            <q-input
+              filled
+              v-model="produto.maisDetalhes"
+              label="Mais detalhes"
+              type="textarea"
+              rows="4"
+            />
+
             <q-input
               filled
               v-model.number="produto.preco"
@@ -47,14 +64,6 @@
             />
   
             <p>Preço final: R${{  produto.preco - produto.promo  }}</p>
-
-            <q-input
-              filled
-              v-model="produto.descricao"
-              label="Descrição"
-              type="textarea"
-              rows="4"
-            />
   
             <div class="row q-gutter-sm">
               <q-btn 
@@ -89,7 +98,8 @@
           urlFoto: '',
           preco: 0,
           promo: 0,
-          descricao: ''
+          descricao: '',
+          maisDetalhes: ''
         },
       }
     },
@@ -166,7 +176,9 @@
   
   <style scoped>
   .my-card {
-    max-width: 600px;
+    max-width: 70%;
+    min-width: 70%;
+    height: 100%;
     margin: 0 auto;
   }
   </style>

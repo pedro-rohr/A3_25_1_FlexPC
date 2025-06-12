@@ -76,7 +76,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .image-container {
   margin-top: 30px;
   width: 100%;
