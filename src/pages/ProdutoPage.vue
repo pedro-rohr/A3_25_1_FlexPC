@@ -18,6 +18,12 @@
       </q-card-section>
       <q-card-actions class="absolute-bottom-right">
         <q-btn
+          v-if="authStore.isAdmin"
+            label="Editar Produto"
+            class="bg-light-blue-8 text-white"
+            @click="editarProduto"
+          />
+        <q-btn
           label="Alugar produto"
           class="bg-light-blue-8 text-white"
           @click="alugarProduto(produto.id)"
@@ -28,6 +34,7 @@
 </template>
 
 <script>
+import { useAuthStore } from 'src/stores/auth'
 import LottieAnimation from '../components/LottieAnimation.vue'
 import black from '../assets/blackF.json'
 
@@ -52,8 +59,12 @@ export default {
         })
       })
       .catch()
-  },
+      this.authStore = useAuthStore()
+    },
   methods: {
+    editarProduto(){
+          this.$router.push(`${this.$route.params.id}/edit`)
+        },
     alugarProduto() {
       this.$router.push('/alugar/' + this.produto.id)
     },
@@ -65,7 +76,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .image-container {
   margin-top: 30px;
   width: 100%;
