@@ -10,9 +10,9 @@
           icon="menu"
           @click="toggleLeftDrawer"
         />
-       
+
         <q-toolbar-title>
-          <img src="../assets/FlexPC.png" alt="Logo" style="width: 120px;" >
+          <img src="../assets/FlexPC.png" alt="Logo" style="width: 120px" />
         </q-toolbar-title>
         <div v-if="authStore.isAuthenticated" class="user-info">
           <span class="user-name">{{ authStore.user?.name || authStore.user?.email }}</span>
@@ -24,24 +24,19 @@
             label="ADMIN"
             class="admin-badge q-ml-sm"
           />
-          <q-btn
-            dense
-            flat
-            icon="logout"
-            @click="handleLogout"
-            class="q-ml-sm"
-          >
+          <q-btn dense flat icon="logout" @click="handleLogout" class="q-ml-sm">
             <q-tooltip>Sair</q-tooltip>
           </q-btn>
         </div>
-        <q-btn
+        <!-- Descomente se precisar de um botão de menu à direita -->
+        <!-- <q-btn
           v-if="authStore.isAuthenticated"
           dense
           flat
           round
           icon="menu"
           @click="toggleRightDrawer"
-        />
+        /> -->
       </q-toolbar>
     </q-header>
     <q-drawer
@@ -54,10 +49,10 @@
       <q-list>
         <q-item-label header>Links</q-item-label>
         <!-- Usando o array linksList -->
-        <q-item 
-          clickable 
-          v-ripple 
-          v-for="link in linksList" 
+        <q-item
+          clickable
+          v-ripple
+          v-for="link in linksList"
           :key="link.title"
           @click="$router.push(link.link)"
         >
@@ -71,15 +66,17 @@
         </q-item>
       </q-list>
     </q-drawer>
-    <q-drawer
+
+    <!-- Descomente se precisar de um drawer à direita -->
+    <!-- <q-drawer
       v-if="authStore.isAuthenticated"
       show-if-above
       v-model="rightDrawerOpen"
       side="right"
       bordered
-    >
+    > -->
     <!-- carrinho? -->
-    </q-drawer>
+    <!-- </q-drawer> -->
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -112,34 +109,36 @@ const linksList = [
 
 export default {
   name: 'MainLayout',
- 
+
   data() {
     return {
       leftDrawerOpen: false,
       rightDrawerOpen: false,
       authStore: null,
-      linksList
+      linksList,
     }
   },
- 
+
   created() {
     this.authStore = useAuthStore()
   },
- 
+
   methods: {
     toggleLeftDrawer() {
+      // Alterna o estado do drawer à esquerda
       this.leftDrawerOpen = !this.leftDrawerOpen
     },
-   
-    toggleRightDrawer() {
-      this.rightDrawerOpen = !this.rightDrawerOpen
-    },
-   
+
+    // Descomente se precisar de um drawer à direita
+    // toggleRightDrawer() {
+    //   this.rightDrawerOpen = !this.rightDrawerOpen
+    // },
+
     handleLogout() {
       this.authStore.logout()
       this.$router.push('/login')
-    }
-  }
+    },
+  },
 }
 </script>
 
