@@ -1,5 +1,14 @@
 const routes = [
   {
+    path: '/',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [{
+      path: '',
+      component: () => import('pages/IndexPage.vue'),
+      meta: { requiresAuth: false }
+    }],
+  },
+  {
     path: '/login',
     component: () => import('layouts/MainLayout.vue'),
     children: [{
@@ -8,15 +17,7 @@ const routes = [
       meta: { requiresGuest: true }
     }],
   },
-  {
-    path: '/',
-    component: () => import('layouts/MainLayout.vue'),
-    children: [{
-      path: '',
-      component: () => import('pages/IndexPage.vue'),
-      meta: { requiresAuth: true }
-    }],
-  },
+ 
   // Pagina produto (pode tirar depois)
   {
     path: '/produto',
@@ -24,7 +25,7 @@ const routes = [
     children: [{
       path: '',
       component: () => import('pages/ProdutoPage.vue'),
-      meta: { requiresAuth: true }
+      meta: { requiresAuth: false }
     }],
   },
   {
@@ -33,7 +34,7 @@ const routes = [
     children: [{
       path: '',
       component: () => import('pages/ProdutoPage.vue'),
-      meta: { requiresAuth: true }
+      meta: { requiresAuth: false }
     }],
   },
   {
@@ -49,7 +50,7 @@ const routes = [
     path: '/sobre',
     component: () => import('layouts/MainLayout.vue'),
     children: [{ path: '', component: () => import('pages/AboutPage.vue'),
-      meta: { requiresAuth: true }
+      meta: { requiresAuth: false }
      }],
   },
 
@@ -61,7 +62,7 @@ const routes = [
   {
     path: '/alugar/:productId',
     name: 'alugar',
-    meta: { requiresAuth: true },
+    meta: { requiresAuth: false },
     component: () => import('layouts/MainLayout.vue'),
     children: [{ path: '', component: () => import('pages/LeasingPage.vue') }],
   },
