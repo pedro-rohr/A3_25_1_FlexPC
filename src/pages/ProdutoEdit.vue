@@ -14,7 +14,6 @@
               lazy-rules
               :rules="[ val => val && val.length > 0 || 'Por favor digite o título']"
             />
-  
             <q-input
               filled
               v-model="produto.urlFoto"
@@ -22,8 +21,6 @@
               type="url"
               hint="https://exemplo.com/foto.jpg"
             />
-  
-            
             <q-input
               filled
               v-model="produto.descricao"
@@ -31,7 +28,6 @@
               type="textarea"
               rows="4"
             />
-
             <q-input
               filled
               v-model="produto.maisDetalhes"
@@ -39,7 +35,6 @@
               type="textarea"
               rows="4"
             />
-
             <q-input
               filled
               v-model.number="produto.preco"
@@ -51,7 +46,6 @@
               :rules="[ val => val >= 0 || 'Preço deve ser maior que 0']"
               prefix="R$"
             />
-  
             <q-input
               filled
               v-model.number="produto.promo"
@@ -62,9 +56,7 @@
               prefix="R$"
               hint="Deixe 0 se não houver promoção"
             />
-  
             <p>Preço final: R${{  produto.preco - produto.promo  }}</p>
-  
             <div class="row q-gutter-sm">
               <q-btn 
                 label="Salvar" 
@@ -133,7 +125,6 @@
   
       salvarProduto() {
         this.loading = true
-        
         fetch('http://localhost:3000/produtos/' + this.$route.params.id, {
           method: 'PUT',
           headers: {
@@ -146,7 +137,6 @@
             this.$q.notify({
               color: 'positive',
               textColor: 'white',
-              icon: 'done',
               message: 'Produto atualizado com sucesso!'
             })
             this.$router.push('/produto/' + this.$route.params.id)

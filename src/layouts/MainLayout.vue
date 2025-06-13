@@ -3,14 +3,12 @@
     <q-header elevated class="bg-primary text-white">
       <q-toolbar>
         <q-btn
-          v-if="authStore.isAuthenticated"
           dense
           flat
           round
           icon="menu"
           @click="toggleLeftDrawer"
         />
-
         <q-toolbar-title>
           <img src="../assets/FlexPC.png" alt="Logo" style="width: 120px" />
         </q-toolbar-title>
@@ -28,6 +26,18 @@
             <q-tooltip>Sair</q-tooltip>
           </q-btn>
         </div>
+        <div v-else class="login-section">
+          <q-btn
+            flat
+            dense
+            icon="login"
+            label="Entrar"
+            @click="goToLogin"
+            class="login-btn"
+          >
+            <q-tooltip>Fazer login</q-tooltip>
+          </q-btn>
+        </div>
         <!-- Descomente se precisar de um botão de menu à direita -->
         <!-- <q-btn
           v-if="authStore.isAuthenticated"
@@ -40,7 +50,6 @@
       </q-toolbar>
     </q-header>
     <q-drawer
-      v-if="authStore.isAuthenticated"
       show-if-above
       v-model="leftDrawerOpen"
       side="left"
@@ -66,7 +75,6 @@
         </q-item>
       </q-list>
     </q-drawer>
-
     <!-- Descomente se precisar de um drawer à direita -->
     <!-- <q-drawer
       v-if="authStore.isAuthenticated"
@@ -109,7 +117,6 @@ const linksList = [
 
 export default {
   name: 'MainLayout',
-
   data() {
     return {
       leftDrawerOpen: false,
@@ -118,24 +125,22 @@ export default {
       linksList,
     }
   },
-
   created() {
     this.authStore = useAuthStore()
   },
-
   methods: {
     toggleLeftDrawer() {
       // Alterna o estado do drawer à esquerda
       this.leftDrawerOpen = !this.leftDrawerOpen
     },
-
     // Descomente se precisar de um drawer à direita
     // toggleRightDrawer() {
     //   this.rightDrawerOpen = !this.rightDrawerOpen
     // },
-
     handleLogout() {
       this.authStore.logout()
+    },
+    goToLogin() {
       this.$router.push('/login')
     },
   },
@@ -147,15 +152,31 @@ export default {
   display: flex;
   align-items: center;
 }
+
 .user-name {
   font-size: 0.9rem;
   margin-right: 0.5rem;
 }
+
 .admin-badge {
   background-color: rgba(255, 255, 255, 0.2);
   font-size: 0.7rem;
   padding: 2px 8px;
   border-radius: 12px;
   font-weight: bold;
+}
+
+.login-section {
+  display: flex;
+  align-items: center;
+}
+
+.login-btn {
+  color: white;
+  font-weight: 500;
+}
+
+.login-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 </style>

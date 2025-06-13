@@ -132,7 +132,7 @@ export default {
        
         if (success) {
           this.success = 'Login realizado com sucesso!'
-            this.$router.push('/')
+            this.$router.back()
 
         } else {
           this.error = 'Credenciais inválidas'
