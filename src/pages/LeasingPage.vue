@@ -357,7 +357,7 @@ export default {
         this.$q.notify({
               color: 'positive',
               textColor: 'done',
-              icon: 'shopping-cart',
+
               message: 'Produto alugado com sucesso!'
             })
       } catch (error) {
