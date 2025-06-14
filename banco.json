@@ -1,202 +1,323 @@
 {
-    "produtos": [
-      {
-        "id": "1",
-        "titulo": "Computador Completo Monitor Teclado e Mouse",
-        "urlFoto": "https://thumbs.dreamstime.com/b/computador-de-secret%C3%A1ria-com-foto-que-edita-o-software-27075400.jpg",
-        "preco": 300,
-        "promo": 0,
-        "maisDetalhes": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "descricao": "Computador Completo com processador Intel Core i5, 8GB RAM, 256GB SSD, monitor 19 polegadas, teclado e mouse."
-      },
-      {
-        "id": "2",
-        "titulo": "Notebook Dell",
-        "urlFoto": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/inspiron-notebooks/15-3520/media-gallery/notebook-inspiron-15-3520-black-gallery-10.psd?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=606&qlt=100,1&resMode=sharp2&size=606,402&chrss=full",
-        "preco": 350,
-        "promo": 99,
-        "maisDetalhes": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "descricao": "Notebook de 15,6 polegadas com processador Intel Core i7 de 12ª geração, 8GB RAM, 512GB SSD, em um design elegante e sustentável, com recursos essenciais para o uso diário."
-      },
-      {
-        "id": "3",
-        "titulo": "Impressora Epson",
-        "urlFoto": "https://www.fujioka.com.br/arquivos/ids/278569-1000-1000/p_57924_alta_1.png?v=638506236374300000",
-        "preco": 200,
-        "promo": 50,
-        "maisDetalhes": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "descricao": "Impressora Multifuncional Epson EcoTank, impressão rápida e de alta qualidade."
-      },
-      {
-        "id": "4",
-        "titulo": "Computador e Monitor",
-        "urlFoto": "https://s.zst.com.br/cms-assets/2021/07/tela-preta-no-pc-ou-notebook-durante-instala-o-ou-atualiza-o.jpg",
-        "preco": 250,
-        "promo": 0,
-        "maisDetalhes": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "descricao": "Computador com processador Intel i5, 8GB RAM, 256GB SSD e monitor 24 polegadas."
-      },
-      {
-        "id": "5",
-        "titulo": "MacBook Air",
-        "urlFoto": "https://www.mastertronic.com.br/media/catalog/product/cache/1/image/1000x1000/9df78eab33525d08d6e5fb8d27136e95/m/g/mgna3_certo_2.jpg",
-        "preco": 400,
-        "promo": 99.99,
-        "maisDetalhes": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "descricao": "MacBook Air 13, Chip M1 7-Core, SSD 256GB, 8GB - Prata."
-      },
-      {
-        "id": "6",
-        "titulo": "Impressora Impressora HP LaserJet",
-        "urlFoto": "https://xtech.com.br/config/imagens_conteudo/produtos/imagensGRD/CF286A.jpg",
-        "preco": 270,
-        "promo": 0,
-        "descricao": "Impressora HP LaserJet Pro 400, impressão rápida e de alta qualidade."
-      },
-      {
-        "id": "7",
-        "titulo": "PC Gamer",
-        "urlFoto": "https://m.media-amazon.com/images/I/61rlEGf5l6L.jpg",
-        "preco": 450,
-        "promo": 100,
-        "descricao": "PC GAMER AMD RYZEN 7 5600GT - 16GB DDR4 - SSD 240GB - MONITOR 19 polegadas - KIT GAMER RGB."
-      },
-      {
-        "id": "8",
-        "titulo": "Notebook Gamer",
-        "urlFoto": "https://images6.kabum.com.br/produtos/fotos/564916/notebook-gamer-acer-nitro-v15-intel-core-i5-13420h-8gb-ram-geforce-rtx-3050-ssd-512gb-15-6-fhd-ips-144hz-windows-11-preto-anv15-51-58az_1715197002_g.jpg",
-        "preco": 500,
-        "promo": 150,
-        "maisDetalhes": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "descricao": "Notebook Gamer Acer Nitro V15 Intel Core i5, 8GB RAM, GeForce RTX 3050, SSD 512GB, 15.6 polegadas FHD IPS 144Hz, Preto."
-      },
-      {
-        "id": "9",
-        "titulo": "Kit de acessórios",
-        "urlFoto": "https://lojaibyte.vteximg.com.br/arquivos/ids/430427-1200-1200/kit-gamer-gt-com-headset-teclado-mouse-mousepad-001-min.jpg?v=638557873974000000",
-        "preco": 59.99,
-        "promo": 0,
-        "maisDetalhes": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "descricao": "Kit Gamer Goldentec com Headset + Teclado + Mouse 1200DPI + Mousepad."
-      }
-    ],
-    "leasing": [
-      {
-        "id": "1",
-        "name": "rrrr",
-        "endereco": "rrrrr",
-        "cep": "tttt",
-        "cpf": "6666",
-        "dtainicio": "3333",
-        "dtafim": "66666",
-        "aceitaTermos": true,
-        "aceitaDiaria": true,
-        "produto_alugado": [
-          {
-            "id": "1",
-            "titulo": "Computador Completo Monitor Teclado e Mouse",
-            "urlFoto": "https://thumbs.dreamstime.com/b/computador-de-secret%C3%A1ria-com-foto-que-edita-o-software-27075400.jpg",
-            "preco": 300,
-            "promo": 0,
-            "maisDetalhes": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "descricao": "Computador Completo com processador Intel Core i5, 8GB RAM, 256GB SSD, monitor 19 polegadas, teclado e mouse."
-          }
-        ]
-      },
-      {
-        "id": "7",
-        "name": "Abner Fonseca",
-        "endereco": "teste teste",
-        "cep": "91370-010",
-        "cpf": "00000000",
-        "dtainicio": "05/05/1995",
-        "dtafim": "06/05/1995",
-        "aceitaTermos": true,
-        "aceitaDiaria": true,
-        "produto_alugado": [
-          {
-            "id": "7",
-            "titulo": "PC Gamer",
-            "urlFoto": "https://m.media-amazon.com/images/I/61rlEGf5l6L.jpg",
-            "preco": 450,
-            "promo": 100,
-            "descricao": "PC GAMER AMD RYZEN 7 5600GT - 16GB DDR4 - SSD 240GB - MONITOR 19 polegadas - KIT GAMER RGB.",
-            "alugueis": [],
-            "alugado": false
-          }
-        ]
-      },
-      {
-        "id": "3",
-        "name": "ABner",
-        "endereco": "Travessa Américo Silveira, Cristo Redentor, Porto Alegre, RS",
-        "cep": "91370-010",
-        "cpf": "0102123123123",
-        "dtainicio": "05/05/1995",
-        "dtafim": "10/06/2025",
-        "aceitaTermos": true,
-        "aceitaDiaria": true,
-        "produto_alugado": [
-          {
-            "id": "3",
-            "titulo": "Impressora Epson",
-            "urlFoto": "https://www.fujioka.com.br/arquivos/ids/278569-1000-1000/p_57924_alta_1.png?v=638506236374300000",
-            "preco": 200,
-            "promo": 50,
-            "maisDetalhes": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "descricao": "Impressora Multifuncional Epson EcoTank, impressão rápida e de alta qualidade.",
-            "alugueis": [],
-            "alugado": false
-          }
-        ]
-      },
-      {
-        "id": "2",
-        "name": "aaaaa",
-        "endereco": "aaaaa",
-        "cep": "91370010",
-        "cpf": "aaaaaa",
-        "dtainicio": "05/05/1995",
-        "dtafim": "08/05/1996",
-        "aceitaTermos": true,
-        "aceitaDiaria": true,
-        "produto_alugado": [
-          {
-            "id": "2",
-            "titulo": "Notebook Dell",
-            "urlFoto": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/inspiron-notebooks/15-3520/media-gallery/notebook-inspiron-15-3520-black-gallery-10.psd?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=606&qlt=100,1&resMode=sharp2&size=606,402&chrss=full",
-            "preco": 350,
-            "promo": 99,
-            "maisDetalhes": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "descricao": "Notebook de 15,6 polegadas com processador Intel Core i7 de 12ª geração, 8GB RAM, 512GB SSD, em um design elegante e sustentável, com recursos essenciais para o uso diário.",
-            "alugueis": [],
-            "alugado": false
-          }
-        ]
-      },
-      {
-        "id": "1",
-        "name": "Abner Fonseca",
-        "endereco": "Travessa Américo Silveira, Cristo Redentor, Porto Alegre - RS",
-        "cep": "91370-010",
-        "cpf": "000000000000000",
-        "dtainicio": "05/05/1995",
-        "dtafim": "09/05/1996",
-        "aceitaTermos": true,
-        "aceitaDiaria": true,
-        "produto_alugado": [
-          {
-            "id": "1",
-            "titulo": "Computador Completo Monitor Teclado e Mouse",
-            "urlFoto": "https://thumbs.dreamstime.com/b/computador-de-secret%C3%A1ria-com-foto-que-edita-o-software-27075400.jpg",
-            "preco": 300,
-            "promo": 0,
-            "maisDetalhes": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "descricao": "Computador Completo com processador Intel Core i5, 8GB RAM, 256GB SSD, monitor 19 polegadas, teclado e mouse.",
-            "alugueis": [],
-            "alugado": false
-          }
-        ]
-      }
-    ]
-  }
+  "produtos": [
+    {
+      "id": "1",
+      "titulo": "Computador + Kit",
+      "urlFoto": "https://thumbs.dreamstime.com/b/computador-de-secret%C3%A1ria-com-foto-que-edita-o-software-27075400.jpg",
+      "preco": 300,
+      "promo": 50.01,
+      "maisDetalhes": "Ideal para tarefas de escritório, estudos e uso doméstico. Equipado com processador Intel Core i5 de 4ª geração, SSD de 256GB para inicialização rápida, memória RAM de 8GB, monitor LED de 19 polegadas, teclado e mouse USB inclusos. Design compacto e fácil de instalar.",
+      "descricao": "Computador Completo com processador Intel Core i5, 8GB RAM, 256GB SSD, monitor 19 polegadas, teclado e mouse."
+    },
+    {
+      "id": "2",
+      "titulo": "Notebook Dell",
+      "urlFoto": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/inspiron-notebooks/15-3520/media-gallery/notebook-inspiron-15-3520-black-gallery-10.psd?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=606&qlt=100,1&resMode=sharp2&size=606,402&chrss=full",
+      "preco": 350,
+      "promo": 100,
+      "maisDetalhes": "Notebook com design moderno e construção resistente. Vem com Windows 11, tela antirreflexo de 15,6'', teclado numérico, autonomia de bateria de até 8 horas e conectividade Wi-Fi 6. Perfeito para estudantes, profissionais e uso multitarefa no dia a dia.",
+      "descricao": "Notebook de 15,6 polegadas com processador Intel Core i7 de 12ª geração, 8GB RAM, 512GB SSD, em um design elegante e sustentável, com recursos essenciais para o uso diário."
+    },
+    {
+      "id": "3",
+      "titulo": "Impressora Epson",
+      "urlFoto": "https://www.fujioka.com.br/arquivos/ids/278569-1000-1000/p_57924_alta_1.png?v=638506236374300000",
+      "preco": 200,
+      "promo": 50,
+      "maisDetalhes": "Multifuncional 3 em 1: imprime, copia e digitaliza. Sistema EcoTank de tanque de tinta recarregável, proporcionando até 90% de economia comparado aos cartuchos convencionais. Alta eficiência para escritórios e residências, com conexão USB e Wi-Fi.",
+      "descricao": "Impressora Multifuncional Epson EcoTank, impressão rápida e de alta qualidade."
+    },
+    {
+      "id": "4",
+      "titulo": "Computador e Monitor",
+      "urlFoto": "https://s.zst.com.br/cms-assets/2021/07/tela-preta-no-pc-ou-notebook-durante-instala-o-ou-atualiza-o.jpg",
+      "preco": 250,
+      "promo": 0,
+      "maisDetalhes": "Computador com desempenho equilibrado para navegação, pacote Office, vídeos e aulas online. Vem com SSD para maior velocidade e monitor LED de 24 polegadas com resolução Full HD, ideal para produtividade e conforto visual.",
+      "descricao": "Computador com processador Intel i5, 8GB RAM, 256GB SSD e monitor 24 polegadas."
+    },
+    {
+      "id": "5",
+      "titulo": "MacBook Air",
+      "urlFoto": "https://www.mastertronic.com.br/media/catalog/product/cache/1/image/1000x1000/9df78eab33525d08d6e5fb8d27136e95/m/g/mgna3_certo_2.jpg",
+      "preco": 400,
+      "promo": 99.99,
+      "maisDetalhes": "Equipado com chip Apple M1 de alto desempenho, tela Retina de 13,3 polegadas com cores vibrantes, bateria com duração de até 18 horas, leve e silencioso. Ideal para criadores de conteúdo, estudantes e profissionais que buscam performance e portabilidade.",
+      "descricao": "MacBook Air 13, Chip M1 7-Core, SSD 256GB, 8GB - Prata."
+    },
+    {
+      "id": "6",
+      "titulo": "Impressora Impressora HP LaserJet",
+      "urlFoto": "https://xtech.com.br/config/imagens_conteudo/produtos/imagensGRD/CF286A.jpg",
+      "preco": 270,
+      "promo": 0,
+      "maisDetalhes": "Impressora laser monocromática com alta velocidade (até 40 ppm), ideal para empresas e ambientes com alta demanda. Conectividade via USB e Ethernet, suporta impressão frente e verso automática e bandeja com capacidade de 250 folhas.",
+      "descricao": "Impressora HP LaserJet Pro 400, impressão rápida e de alta qualidade."
+    },
+    {
+      "id": "7",
+      "titulo": "PC Gamer",
+      "urlFoto": "https://m.media-amazon.com/images/I/61rlEGf5l6L.jpg",
+      "preco": 450,
+      "promo": 100,
+      "maisDetalhes": "Montado para jogos intermediários e streamings. Vem com placa de vídeo integrada Vega 7, memória RAM expansível, gabinete com LEDs RGB e excelente fluxo de ar. Monitor incluso e acessórios gamer como teclado, mouse e headset completam o conjunto.",
+      "descricao": "PC GAMER AMD RYZEN 7 5600GT - 16GB DDR4 - SSD 240GB - MONITOR 19 polegadas - KIT GAMER RGB."
+    },
+    {
+      "id": "8",
+      "titulo": "Notebook Gamer",
+      "urlFoto": "https://images6.kabum.com.br/produtos/fotos/564916/notebook-gamer-acer-nitro-v15-intel-core-i5-13420h-8gb-ram-geforce-rtx-3050-ssd-512gb-15-6-fhd-ips-144hz-windows-11-preto-anv15-51-58az_1715197002_g.jpg",
+      "preco": 500,
+      "promo": 150,
+      "maisDetalhes": "Notebook de alto desempenho com GPU dedicada GeForce RTX 3050, taxa de atualização de 144Hz para jogos fluidos, teclado retroiluminado, sistema de resfriamento otimizado. Ideal para gamers e criadores de conteúdo que exigem velocidade e gráficos intensos.",
+      "descricao": "Notebook Gamer Acer Nitro V15 Intel Core i5, 8GB RAM, GeForce RTX 3050, SSD 512GB, 15.6 polegadas FHD IPS 144Hz, Preto."
+    },
+    {
+      "id": "9",
+      "titulo": "Kit de acessórios",
+      "urlFoto": "https://lojaibyte.vteximg.com.br/arquivos/ids/430427-1200-1200/kit-gamer-gt-com-headset-teclado-mouse-mousepad-001-min.jpg?v=638557873974000000",
+      "preco": 59.99,
+      "promo": 0,
+      "maisDetalhes": "Conjunto completo para gamers iniciantes: teclado com iluminação LED, mouse com resolução de até 1200 DPI, mousepad antiderrapante e headset com microfone ajustável e som estéreo. Compatível com PC e notebook, ideal para melhorar a experiência nos jogos.",
+      "descricao": "Kit Gamer Goldentec com Headset + Teclado + Mouse 1200DPI + Mousepad."
+    },
+    {
+      "id": "10",
+      "titulo": "Projetor Multimídia",
+      "urlFoto": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi.mlcdn.com.br%2F1500x1500%2Fprojetor-benq-ms513pb-2700-lumensresolucao-nativa-800-x-600-usb-hdmi-088206400.jpg&f=1&nofb=1&ipt=563fee5c88370e446601febf75a8a9b19902a9d7f5a868e9e86295ae66dee168",
+      "preco": 180,
+      "promo": 30,
+      "maisDetalhes": "Projetor LED portátil com entrada HDMI, USB e AV. Ideal para apresentações ou cinema em casa.",
+      "descricao": "Projetor portátil LED Multilaser com resolução de até 1080p e entrada HDMI."
+    },
+    {
+      "id": "11",
+      "titulo": "Tablet Samsung Galaxy Tab",
+      "urlFoto": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.bOqndB4RYB8xe9yPSU0ZCgHaE7%3Fr%3D0%26pid%3DApi&f=1&ipt=ea4a1519a4448d032be2958bfdefcbea3a5ae786b9b4aab847feceb65f3dc88b",
+      "preco": 220,
+      "promo": 40,
+      "maisDetalhes": "Tablet de 8.7 polegadas, ótimo para leitura, anotações e consumo de mídia.",
+      "descricao": "Galaxy Tab A7 Lite com 3GB RAM, 32GB de armazenamento e Android 12."
+    },
+    {
+      "id": "12",
+      "titulo": "Monitor UltraWide LG",
+      "urlFoto": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.lg.com%2Fbr%2Fimages%2Fmonitores%2Fmd05853455%2Fgallery%2FUM69G_Z1_04072017.jpg&f=1&nofb=1&ipt=c90d2c69fc24045d83ec9f9fbcfe227fd7c90acafbb7b0f4fc85704c867b06cf",
+      "preco": 280,
+      "promo": 0,
+      "maisDetalhes": "Monitor UltraWide de 29 polegadas, ideal para multitarefas e produtividade.",
+      "descricao": "Monitor LG 29'' UltraWide Full HD com tela IPS e proporção 21:9."
+    },
+    {
+      "id": "13",
+      "titulo": "Câmera Logitech C920",
+      "urlFoto": "https://resource.logitech.com/w_800,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/webcams/c920/gallery/c920-gallery-1.png?v=1",
+      "preco": 90,
+      "promo": 10,
+      "maisDetalhes": "Webcam Full HD 1080p com microfone estéreo embutido.",
+      "descricao": "Ideal para videoconferências e streaming com excelente qualidade de imagem e som."
+    },
+    {
+      "id": "14",
+      "titulo": "Scanner Portátil Canon",
+      "urlFoto": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.tcdn.com.br%2Fimg%2Fimg_prod%2F279096%2Fscanner_portatil_p_215ii_canon_3347_2_20190926152102.jpg&f=1&nofb=1&ipt=287f706a436243b0afe5ea7915c564d63e9ddb1f9be1a83a5b43fb87b1612a2f",
+      "preco": 150,
+      "promo": 25,
+      "maisDetalhes": "Scanner leve e compacto para digitalizar documentos em casa ou no escritório.",
+      "descricao": "Scanner portátil Canon imageFORMULA, USB, digitalização rápida e eficiente."
+    },
+    {
+      "id": "15",
+      "titulo": "Mesa Digitalizadora Wacom",
+      "urlFoto": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmatron.vteximg.com.br%2Farquivos%2Fids%2F157139-1000-1000%2FIntuos_Pen_CTL480_2.jpg%3Fv%3D635451742200630000&f=1&nofb=1&ipt=d216cf1a2cb492fb1d1e883d003985dc166ea1186e85707010b8951f19e2e2a6",
+      "preco": 130,
+      "promo": 0,
+      "maisDetalhes": "Perfeita para ilustradores, designers e editores gráficos.",
+      "descricao": "Mesa digitalizadora Wacom Intuos com caneta sem bateria e área ativa de 6x3.7 polegadas."
+    },
+    {
+      "id": "16",
+      "titulo": "Roteador Wi-Fi Mesh",
+      "urlFoto": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.tp-link.com%2Fupload%2Fimage-line%2FHX510_US_1.0_overview_1_large_20221122100645z.jpg&f=1&nofb=1&ipt=f54e1d1982aa172b30bfb4ba586321e79e65ef9f07f7f84870a64fa35aec6a53",
+      "preco": 90,
+      "promo": 15,
+      "maisDetalhes": "Expanda o alcance do seu Wi-Fi com tecnologia Mesh.",
+      "descricao": "Kit Roteador TP-Link Deco M4 Wi-Fi Mesh AC1200, 2 unidades."
+    },
+    {
+      "id": "17",
+      "titulo": "HD Externo 1TB",
+      "urlFoto": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.tcdn.com.br%2Fimg%2Fimg_prod%2F458206%2Fhd_externo_1tb_my_passport_ultra_western_digital_preto_usb3_12495_1_20160718104417.jpg&f=1&nofb=1&ipt=8ca7bdc308779d6248a2c9802d46cc20966b49f25b62a0da7107ccad44355dac",
+      "preco": 70,
+      "promo": 0,
+      "maisDetalhes": "Ideal para backup de arquivos grandes e transporte de dados.",
+      "descricao": "HD Externo Seagate Expansion 1TB, USB 3.0."
+    },
+    {
+      "id": "18",
+      "titulo": "Suporte Ergonômico para Notebook",
+      "urlFoto": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.tcdn.com.br%2Fimg%2Fimg_prod%2F1165337%2Fsuporte_para_notebook_ergonomico_multifuncional_dvalima_g4_mutabis_19287_1_5e296a03dc56438369bdfd058ffd5649.png&f=1&nofb=1&ipt=603881c355ab9caaa7cdeb3fec822af73d39697e51c1b0f444dbb6803b36e586",
+      "preco": 35,
+      "promo": 0,
+      "maisDetalhes": "Melhora a postura e o conforto durante o uso prolongado do notebook.",
+      "descricao": "Suporte ajustável em alumínio com ventilação para notebooks de até 17 polegadas."
+    },
+    {
+      "id": "19",
+      "titulo": "Mini PC Intel NUC",
+      "urlFoto": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn-reichelt.de%2Fbilder%2Fweb%2Fxxl_ws%2FE910%2FINTEL_NUC13_PRO_ANKI_01.png&f=1&nofb=1&ipt=bd60a367da0b314b1145feef1d74f8cf63acda4ab0078adc5d11d444d113c600",
+      "preco": 320,
+      "promo": 50,
+      "maisDetalhes": "Compacto, potente e ideal para ambientes com pouco espaço.",
+      "descricao": "Mini PC Intel NUC i5, 8GB RAM, 256GB SSD, HDMI e USB-C."
+    }
+],
+  "leasing": [
+    {
+      "id": "1",
+      "name": "rrrr",
+      "endereco": "rrrrr",
+      "cep": "tttt",
+      "cpf": "6666",
+      "dtainicio": "3333",
+      "dtafim": "66666",
+      "aceitaTermos": true,
+      "aceitaDiaria": true,
+      "produto_alugado": [
+        {
+          "id": "1",
+          "titulo": "Computador Completo Monitor Teclado e Mouse",
+          "urlFoto": "https://thumbs.dreamstime.com/b/computador-de-secret%C3%A1ria-com-foto-que-edita-o-software-27075400.jpg",
+          "preco": 300,
+          "promo": 0,
+          "maisDetalhes": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "descricao": "Computador Completo com processador Intel Core i5, 8GB RAM, 256GB SSD, monitor 19 polegadas, teclado e mouse."
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Abner Fonseca",
+      "endereco": "teste teste",
+      "cep": "91370-010",
+      "cpf": "00000000",
+      "dtainicio": "05/05/1995",
+      "dtafim": "06/05/1995",
+      "aceitaTermos": true,
+      "aceitaDiaria": true,
+      "produto_alugado": [
+        {
+          "id": "7",
+          "titulo": "PC Gamer",
+          "urlFoto": "https://m.media-amazon.com/images/I/61rlEGf5l6L.jpg",
+          "preco": 450,
+          "promo": 100,
+          "descricao": "PC GAMER AMD RYZEN 7 5600GT - 16GB DDR4 - SSD 240GB - MONITOR 19 polegadas - KIT GAMER RGB.",
+          "alugueis": [],
+          "alugado": false
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "ABner",
+      "endereco": "Travessa Américo Silveira, Cristo Redentor, Porto Alegre, RS",
+      "cep": "91370-010",
+      "cpf": "0102123123123",
+      "dtainicio": "05/05/1995",
+      "dtafim": "10/06/2025",
+      "aceitaTermos": true,
+      "aceitaDiaria": true,
+      "produto_alugado": [
+        {
+          "id": "3",
+          "titulo": "Impressora Epson",
+          "urlFoto": "https://www.fujioka.com.br/arquivos/ids/278569-1000-1000/p_57924_alta_1.png?v=638506236374300000",
+          "preco": 200,
+          "promo": 50,
+          "maisDetalhes": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "descricao": "Impressora Multifuncional Epson EcoTank, impressão rápida e de alta qualidade.",
+          "alugueis": [],
+          "alugado": false
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "aaaaa",
+      "endereco": "aaaaa",
+      "cep": "91370010",
+      "cpf": "aaaaaa",
+      "dtainicio": "05/05/1995",
+      "dtafim": "08/05/1996",
+      "aceitaTermos": true,
+      "aceitaDiaria": true,
+      "produto_alugado": [
+        {
+          "id": "2",
+          "titulo": "Notebook Dell",
+          "urlFoto": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/inspiron-notebooks/15-3520/media-gallery/notebook-inspiron-15-3520-black-gallery-10.psd?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=606&qlt=100,1&resMode=sharp2&size=606,402&chrss=full",
+          "preco": 350,
+          "promo": 99,
+          "maisDetalhes": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "descricao": "Notebook de 15,6 polegadas com processador Intel Core i7 de 12ª geração, 8GB RAM, 512GB SSD, em um design elegante e sustentável, com recursos essenciais para o uso diário.",
+          "alugueis": [],
+          "alugado": false
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "name": "Abner Fonseca",
+      "endereco": "Travessa Américo Silveira, Cristo Redentor, Porto Alegre - RS",
+      "cep": "91370-010",
+      "cpf": "000000000000000",
+      "dtainicio": "05/05/1995",
+      "dtafim": "09/05/1996",
+      "aceitaTermos": true,
+      "aceitaDiaria": true,
+      "produto_alugado": [
+        {
+          "id": "1",
+          "titulo": "Computador Completo Monitor Teclado e Mouse",
+          "urlFoto": "https://thumbs.dreamstime.com/b/computador-de-secret%C3%A1ria-com-foto-que-edita-o-software-27075400.jpg",
+          "preco": 300,
+          "promo": 0,
+          "maisDetalhes": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "descricao": "Computador Completo com processador Intel Core i5, 8GB RAM, 256GB SSD, monitor 19 polegadas, teclado e mouse.",
+          "alugueis": [],
+          "alugado": false
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "name": "pedro",
+      "endereco": "Rua Arabaiana, Barra do Ceará, Fortaleza - CE",
+      "cep": "60332-440",
+      "cpf": "1",
+      "dtainicio": "01/06/2025",
+      "dtafim": "26/06/2025",
+      "aceitaTermos": true,
+      "aceitaDiaria": true,
+      "produto_alugado": [
+        {
+          "id": "1",
+          "titulo": "Computador + Kit",
+          "urlFoto": "https://thumbs.dreamstime.com/b/computador-de-secret%C3%A1ria-com-foto-que-edita-o-software-27075400.jpg",
+          "preco": 300,
+          "promo": 50.01,
+          "maisDetalhes": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "descricao": "Computador Completo com processador Intel Core i5, 8GB RAM, 256GB SSD, monitor 19 polegadas, teclado e mouse.",
+          "alugueis": [],
+          "alugado": false
+        }
+      ],
+      "valorTotal": 8750,
+      "diasAluguel": 25,
+      "valorProduto": 7500,
+      "valorTaxas": 1250,
+      "taxaAdicional": 50
+    }
+  ]
+}

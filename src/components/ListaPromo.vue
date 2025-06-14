@@ -2,6 +2,7 @@
   <div class="bg-light-blue-2">
     <div class="textoCentro text-light-blue-10">
       <h2 style="font-weight: bold; font-size: 40px">Produtos em promoção</h2>
+    </div>
       <div class="container">
         <div class="row flexDisplay">
           <CardProduto
@@ -16,7 +17,7 @@
           />
         </div>
       </div>
-    </div>
+    
   </div>
 </template>
 <script>

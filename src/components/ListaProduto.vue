@@ -1,7 +1,7 @@
 <template>
   <div class="container bg-light-blue-2 pads borderRadius">
     <div class="textoCentro text-light-blue-10">
-      <h2 style="font-weight: bold; font-size: 40px">Produtos</h2>
+      <h2 style="font-weight: bold; font-size: 40px">Todos os Produtos</h2>
     </div>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 centralizar">
       <CardProduto
