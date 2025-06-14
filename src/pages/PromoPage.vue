@@ -2,7 +2,7 @@
   <q-page class="flex flex-center bg-light-blue-1 pads text-light-blue-10">
     <div class="container">
       <div class="textoCentro">
-        <h1 class="textoCentro" style="font-weight: bold; font-size: 50px">Promoções</h1>
+        <!-- <h1 class="textoCentro" style="font-weight: bold; font-size: 50px">Promoções</h1> -->
       </div>
       <div class="flexDisplay">
         <ListaPromo />
