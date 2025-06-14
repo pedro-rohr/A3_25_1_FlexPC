@@ -23,6 +23,19 @@
         e democratiza o acesso à tecnologia de ponta. Na <b>FlexPC</b>,
         acreditamos que você não precisa possuir para ter o melhor — <b><i>só precisa de flexibilidade</i></b>.
       </p>
+      <p>
+        Além disso, oferecemos planos sob medida para diferentes perfis de uso, com suporte técnico especializado
+        e atendimento personalizado. A experiência do usuário está no centro de tudo o que fazemos — 
+        desde a escolha dos componentes até a entrega rápida e o suporte pós-locação.
+      </p>
+      <p>
+        Com a <b>FlexPC</b>, você acompanha a evolução tecnológica sem se preocupar com desvalorização ou manutenção.
+        Atualize seu setup sempre que quiser, explore novas possibilidades e foque no que realmente importa:
+        performance, produtividade e inovação.
+      </p>
+      <div class="textoCentro pads">
+        <img src="..\assets\FlexPC.svg" alt="Logo FlexPC" height="100" />
+      </div>
     </div>
   </div>
 
