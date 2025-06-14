@@ -53,6 +53,7 @@
               type="number"
               step="0.01"
               min="0"
+              :max="produto.preco - 0.01"
               prefix="R$"
               hint="Deixe 0 se não houver promoção"
             />
